@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>StackPanel</title>
+	<style>
+		body {
+			background-color: #FFF7D6;
+			border: 1px solid #E6D39B;
+			font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+			font-size: 14px;
+			padding: 0.5em 1em;
+		}
+		h1 {
+			font-size: 1.5em;
+		}
+		h2 {
+			font-size: 1.3em;
+		}
+		h3 {
+			font-size: 1em;
+			font-weight: normal;
+			text-transform: uppercase;
+		}
+		ul {
+			padding-left: 30px;
+			list-style: square;
+		}
+		ol {
+			padding-left: 30px;
+		}
+		code {
+			color: #600;
+		}
+		figure {
+			margin-left: 0;
+		}
+		figcaption {
+			font-size: smaller;
+			font-style: italic;
+		}
+		.screenshot img {
+			max-width: 500px;
+		}
+	</style>
+</head>
+<body>
+	<h2>Theorie</h2>
+	<p>
+		Met <code>StackPanel</code> stapel je controls naast elkaar in één rij of kolom, naargelang de waarde van <code>Orientation</code>. Lees vooraf grondig de theorie in de <a href="https://rogiervdl.github.io/CS-course/08_layout.html#stackpanel" target="_new">online cursus</a>.
+	</p>
+	<p>
+		Een <code>StackPanel</code> kan enkel stapelen, niet meer. Wil je meer controle over de ruimte die controls innemen, gebruik dan <code>Grid</code>. 
+	</p>
+
+	<h2>Opdracht</h2>
+	<ol>
+		<li>maak een <code>Grid</code> met twee kolommen: 140px vast en flexibel; de maximale breedte is 500px</li>
+		<li>plaats in elke cel een verticale <code>StackPanel</code>; de tweede heeft een linkermarge van 20px</li>
+		<li>plaats daarin telkens een <code>Label</code>, <code>TextBox</code> en <code>TextBlock</code></li>
+		<li>maak de <code>Label</code> op: 10px ondermarge, 5px padding links/rechts, vet</li>
+		<li>maak de <code>TextBox</code> op: de rand is <code>LightBlue</code>, de hoogte is 30px, en de tekst is verticaal gecentreerd</li>
+		<li>maak de <code>TextBlock</code> op: tekst is <code>#666</code>, schuin, 10px, rechts gealigneerd; de padding is 5px</li>
+	</ol>
+	<figure class="screenshot">
+		<img src="img/StackPanel.png" alt="">
+		<figcaption>screenshot</figcaption>
+	</figure>
+</body>
+</html>

@@ -1,0 +1,36 @@
+﻿<Page x:Class="WpfLayoutUIOefenblad.Exercises.DockPanel"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfLayoutUIOefenblad.Exercises"
+      mc:Ignorable="d" 
+      d:DesignHeight="650" d:DesignWidth="800"
+      Title="DockPanel">
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="250px"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Frame x:Name="fraAssignment" Grid.Row="0" Grid.Column="0" Background="#eeeeee" />
+        <!-- TODO: PAS HIERONDER DE XAML AAN --> 
+        <DockPanel Background="#F3F3F3" Grid.Row="1" LastChildFill="True" Margin="20">
+            <Border Background="#CDEFFD" BorderBrush="#2B6CB0" BorderThickness="1" Padding="12">
+                <TextBlock Text="HEADER" FontWeight="SemiBold"/>
+            </Border>
+            <Border Background="#FED7D7" BorderBrush="#C53030" BorderThickness="1" Padding="12" Width="140">
+                <TextBlock Text="MENU" FontWeight="SemiBold"/>
+            </Border>
+            <Border Background="White" BorderBrush="#BBB" BorderThickness="1" Padding="12">
+                <TextBlock TextWrapping="Wrap">
+                    <Run FontWeight="SemiBold">CONTENT</Run> — dit vlak moet automatisch alle resterende ruimte innemen.
+                    Wanneer je het venster groter of kleiner maakt, past dit vak zich aan.
+                </TextBlock>
+            </Border>
+            <Border Background="#CDEFCD" BorderBrush="#2BB06C" BorderThickness="1" Padding="12">
+                <TextBlock Text="FOOTER" FontWeight="SemiBold"/>
+            </Border>
+        </DockPanel>
+    </Grid>
+</Page>

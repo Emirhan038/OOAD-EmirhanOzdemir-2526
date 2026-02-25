@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>MessageBox</title>
+	<style>
+		body {
+			background-color: #FFF7D6;
+			border: 1px solid #E6D39B;
+			font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+			font-size: 14px;
+			padding: 0.5em 1em;
+		}
+		h1 {
+			font-size: 1.5em;
+		}
+		h2 {
+			font-size: 1.3em;
+		}
+		h3 {
+			font-size: 1em;
+			font-weight: normal;
+			text-transform: uppercase;
+		}
+		ul {
+			padding-left: 30px;
+			list-style: square;
+		}
+		ol {
+			padding-left: 30px;
+		}
+		code {
+			color: #600;
+		}
+		figure {
+			margin-left: 0;
+		}
+		figcaption {
+			font-size: smaller;
+			font-style: italic;
+		}
+		.screenshot img {
+			max-width: 200px;
+		}
+	</style>
+</head>
+<body>
+	<h2>Theorie</h2>
+	<p>
+		Een <code>MessageBox</code> is een dialoogvenster; voor een kort overzicht zie de <a href="https://rogiervdl.github.io/CS-course/08_layout.html#scrollviewer" target="_new">online cursus</a>. Let op: gebruik ze zo weinig mogelijk in praktijk, want ze zijn <em>UI-blocking</em> (je kan niks anders doen tot je zeg wegklikt).
+		Gebruik waar mogelijk liever een <code>TextBlock</code> voor de mededeling.
+	</p>
+
+	<h2>Opdracht</h2>
+	<p>Let op! Voor deze opgave zul je ook in de code-behind moeten werken.</p>
+	<ol>
+		<li>als op de knop geklikt wordt, toon je een <code>MessageBox</code> met de vraag te bevestigen</li>
+		<li>alleen als op "Ok" geklikt werd, toon je een tweede <code>MessageBox</code> met de bevestiging dat het opgeslagen is</li>
+	</ol>
+	<figure class="screenshot">
+		<p><img src="img/MessageBox1.png" alt=""></p>
+		<img src="img/MessageBox2.png" alt="">
+		<figcaption>screenshot</figcaption>
+	</figure>
+</body>
+</html>

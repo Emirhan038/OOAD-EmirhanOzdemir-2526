@@ -1,0 +1,30 @@
+﻿<Page x:Class="WpfLayoutUIOefenblad.Exercises.IntroPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Intro" Background="#ffffee">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="20" MaxWidth="900">
+
+            <TextBlock FontSize="26" FontWeight="SemiBold" Margin="0,0,0,15">
+                WPF Layout &amp; UI
+            </TextBlock>
+
+            <TextBlock FontSize="14" TextWrapping="Wrap" Margin="0,0,0,10">
+                Dit oefenblad is een verzameling van kleine oefeningen. 
+            </TextBlock>
+
+            <TextBlock FontSize="18" FontWeight="SemiBold" Margin="0,10,0,5">
+                Hoe oefeningen maken
+            </TextBlock>
+
+            <TextBlock TextWrapping="Wrap" FontSize="14" LineHeight="1.8">
+                1. Open de XAML van de oefening. Je vindt het in de map <Run FontWeight="Bold">Exercises</Run> van dit project.<LineBreak/>
+                2. Lees de opdrachttekst grondig.<LineBreak/>
+                3. Vul overal aan waar een <Run Foreground="Green" FontFamily="Consolas">&lt;!-- TODO ... --&gt;</Run> of <Run Foreground="Green" FontFamily="Consolas">// TODO ...</Run> commentaarblok vindt.<LineBreak/><LineBreak/>
+                De code-behind mag niet gewijzigd worden en dient enkel om de pagina te laden.
+            </TextBlock>
+
+        </StackPanel>
+    </ScrollViewer>
+</Page>

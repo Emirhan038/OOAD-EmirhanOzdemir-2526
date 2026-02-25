@@ -1,0 +1,38 @@
+﻿<Page x:Class="WpfLayoutUIOefenblad.Exercises.ScrollViewer"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfLayoutUIOefenblad.Exercises"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ScrollViewer">
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="250px"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Frame x:Name="fraAssignment" Grid.Row="0" Grid.Column="0" Background="#eeeeee" />
+        <Border Background="#F3F3F3" BorderBrush="#DDDDDD" BorderThickness="1" Padding="12" Margin="20" Grid.Row="1">
+            <!-- TODO: PAS HIERONDER DE XAML AAN -->
+            <StackPanel Background="#F3F3F3" Margin="10">
+                <TextBlock FontSize="18" FontWeight="SemiBold" Margin="0,0,0,10">Sectie 1</TextBlock>
+                <TextBlock TextWrapping="Wrap" Margin="0,0,0,20">
+                    Hipoteca eh desperto pintados le ni bastante se habitaba. Un la sexo unas hizo unos sola faro ch oh. Fama cama ti ma ocho odio como. Ido calva asi pilon eso ley frios. Venta darle siete te no tiple. Ir yo tenerle sentado suertes refirio negarle se. Quitado ex serenos derriba cumplir yo. Hoja pre tuvo malo sido celo dio tan sol.
+                </TextBlock>
+                <Image Source="/Assignments/img/blazer01.JPG" Margin="0,0,0,20" HorizontalAlignment="Left" Width="80"/>
+                <TextBlock FontSize="18" FontWeight="SemiBold" Margin="0,0,0,10">Sectie 2</TextBlock>
+                <TextBlock TextWrapping="Wrap" Margin="0,0,0,20">
+                    Ca il abattre ennemie lisiere faisait ma melezes. Des convulsion dit souhaitait simplement crispation. Distribua reveillez depourvus et de evocation au metairies je laidement. Face fit mess eut gens dieu suis hein pas. Promenade souvenirs entourage ras ici demeurent dentelees.
+                </TextBlock>
+                <Image Source="/Assignments/img/blazer02.JPG" Margin="0,0,0,20" HorizontalAlignment="Left" Width="80"/>
+                <TextBlock FontSize="18" FontWeight="SemiBold" Margin="0,0,0,10">Sectie 3</TextBlock>
+                <TextBlock TextWrapping="Wrap" Margin="0,0,0,20">
+                    Meinung atemzug konntet gerbers dorthin wie wer ein. Spateren verlogen blattern pa mi. Regen nur fremd schlo lernt brief ihren den. Schritt schurze eigenes ige ehe gru ahnlich. Die sieben singen kannst der treppe.
+                </TextBlock>
+                <Image Source="/Assignments/img/blazer03.JPG" Margin="0,0,0,20" HorizontalAlignment="Left" Width="80"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Page>

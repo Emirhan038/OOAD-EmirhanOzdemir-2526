@@ -1,0 +1,46 @@
+<Page x:Class="WpfLayoutUIOefenblad.Exercises.ContentAlignment"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfLayoutUIOefenblad.Exercises"
+      mc:Ignorable="d" 
+      d:DesignHeight="650" d:DesignWidth="800"
+      Title="ContentAlignment">
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="250px"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Frame x:Name="fraAssignment" Grid.Row="0" Grid.Column="0" Background="#eeeeee" />
+        <!-- TODO: PAS HIERONDER DE XAML AAN -->
+        <Grid Margin="20" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontSize="20" Text="~~ Maak een reservatie ~~" Margin="0,0,0,20" />
+            <Label Grid.Row="1" Grid.Column="0" Margin="0,5" Content="E-mail:" />
+            <TextBox Grid.Row="1" Grid.Column="1" Margin="0,5" Text="bobby.peru@lynch.com" />
+            <Label Grid.Row="2" Grid.Column="0" Content="Personen" Margin="0,5"/>
+            <TextBox Grid.Row="2" Grid.Column="1" Text="3" Height="30" Margin="0,5" Width="100" HorizontalAlignment="Left"/>
+            <Label Grid.Row="3" Grid.Column="0" Content="Commentaar" Margin="0,0,10,10"/>
+            <TextBox Grid.Row="3" Grid.Column="1" Height="80" AcceptsReturn="True" TextWrapping="Wrap" Margin="0,0,0,10"/>
+            <TextBlock Grid.Row="4" Grid.Column="1" TextWrapping="Wrap" Margin="0,0,0,20" FontStyle="Italic">
+                In af streng er zeggen in voeten. Talrijke om al en afkoopen behoeven minstens eilandje centimes. Enkelen wij anderen bezocht het. Op wilde af rente raakt langs weren. Meenemen die gebouwen tot brazilie dit tin. 
+                Daar veel zake bate veel in heft ze. Buitendien concurrent wetenschap beschikken of er te ze.
+                Ze te en onderling toeneming geschiedt bezetting al schroeven wassching. Gematigd mijnerts opbrengt als toekomst lot.
+            </TextBlock>
+            <Button Grid.Row="5" Grid.Column="1" Content="Verzenden" Padding="8,3" HorizontalAlignment="Right"/>
+        </Grid>
+    </Grid>
+</Page>
