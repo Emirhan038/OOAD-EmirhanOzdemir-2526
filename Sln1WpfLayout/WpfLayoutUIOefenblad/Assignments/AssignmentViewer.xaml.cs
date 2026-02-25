@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics;
 using System.Windows.Controls;
 
-namespace WpfControlsOefenblad.Assignments
+namespace WpfLayoutUIOefenblad.Assignments
 {
     /// <summary>
     /// Interaction logic for AssignmentViewer.xaml
