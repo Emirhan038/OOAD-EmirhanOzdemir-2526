@@ -7,6 +7,7 @@
       mc:Ignorable="d" 
       d:DesignHeight="650" d:DesignWidth="800"
       Title="WrapPanel">
+
     <Grid Background="White">
         <Grid.RowDefinitions>
             <RowDefinition Height="250px"/>
@@ -15,6 +16,38 @@
         <Frame x:Name="fraAssignment" Grid.Row="0" Grid.Column="0" Background="#eeeeee" />
         <Border Background="#CDEFFD" BorderBrush="#2B6CB0" BorderThickness="1" Padding="12" Margin="20" Grid.Row="1">
             <!-- TODO: PAS HIERONDER DE XAML AAN -->
+            <WrapPanel MaxWidth="400">
+                <Border BorderBrush="White" BorderThickness="5" Margin="5">
+                    <Image Source="/Assignments/img/blazer01.JPG" Width="80"/>
+                </Border>
+                <Border BorderBrush="White" BorderThickness="5" Margin="5">
+                    <Image Source="/Assignments/img/blazer02.JPG" Width="80"/>
+                </Border>
+                <Border BorderBrush="White" BorderThickness="5" Margin="5">
+                    <Image Source="/Assignments/img/blazer03.JPG" Width="80"/>
+                </Border>
+                <Border BorderBrush="White" BorderThickness="5" Margin="5">
+                    <Image Source="/Assignments/img/blazer04.JPG" Width="80"/>
+                </Border>
+                <Border BorderBrush="White" BorderThickness="5" Margin="5">
+                    <Image Source="/Assignments/img/blazer05.JPG" Width="80"/>
+                </Border>
+                <Border BorderBrush="White" BorderThickness="5" Margin="5">
+                    <Image Source="/Assignments/img/blazer06.JPG" Width="80"/>
+                </Border>
+                <Border BorderBrush="White" BorderThickness="5" Margin="5">
+                    <Image Source="/Assignments/img/blazer07.JPG" Width="80"/>
+                </Border>
+                <Border BorderBrush="White" BorderThickness="5" Margin="5">
+                    <Image Source="/Assignments/img/blazer08.JPG" Width="80"/>
+                </Border>
+                <Border BorderBrush="White" BorderThickness="5" Margin="5">
+                    <Image Source="/Assignments/img/blazer09.JPG" Width="80"/>
+                </Border>
+                <Border BorderBrush="White" BorderThickness="5" Margin="5">
+                    <Image Source="/Assignments/img/blazer10.JPG" Width="80"/>
+                </Border>
+            </WrapPanel>
         </Border>
     </Grid>
 </Page>

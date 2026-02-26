@@ -16,6 +16,49 @@
         <Frame x:Name="fraAssignment" Grid.Row="0" Grid.Column="0" Background="#eeeeee" />
         <Border Background="#EEFDEF" BorderBrush="#6B6CB0" BorderThickness="1" Padding="12" Margin="20" Grid.Row="1">
             <!-- TODO: PAS HIERONDER DE XAML AAN -->
+            <TabControl>
+
+                <TabItem Header="Account">
+                    <Grid Margin="10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <Label Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" Margin="0,0,10,10">E-mail:</Label>
+                        <TextBox Grid.Row="0" Grid.Column="1" Margin="0,0,0,10" Height="30" VerticalContentAlignment="Center"/>
+
+                        <Label Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Margin="0,0,10,10">Wachtwoord:</Label>
+                        <PasswordBox Grid.Row="1" Grid.Column="1" Margin="0,0,0,10" Height="30" VerticalContentAlignment="Center"/>
+
+                        <Button Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" Padding="10,5" Margin="0,10,0,168">Wijzigen</Button>
+                    </Grid>
+                </TabItem>
+
+                <TabItem Header="Voorkeuren">
+                    <StackPanel Margin="10">
+                        <CheckBox Margin="0,0,0,10" IsChecked="True">Nieuwsbrief ontvangen</CheckBox>
+                        <CheckBox Margin="0,0,0,10" IsChecked="True">Donkere modus</CheckBox>
+                        <CheckBox Margin="0,0,0,10" IsChecked="False">Meldingen toestaan</CheckBox>
+                    </StackPanel>
+                </TabItem>
+
+                <TabItem Header="Over">
+                    <TextBlock Margin="10" TextWrapping="Wrap">
+                        <Run FontWeight="Bold">MyApp v1.0</Run>
+                        <LineBreak/>
+                        <LineBreak/>
+                        Dit is een voorbeeldapplicatie gemaakt voor de WPF Layout UI oefeningen.
+                    </TextBlock>
+                </TabItem>
+
+            </TabControl>
         </Border>
     </Grid>
 </Page>

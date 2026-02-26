@@ -14,16 +14,36 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Frame x:Name="fraAssignment" Grid.Row="0" Grid.Column="0" Background="#eeeeee" />
-        <Grid Grid.Row="2" Background="#F3F3F3" Width="500" Margin="10">
-            <!-- TODO: PAS HIERONDER DE XAML AAN -->
-            <TextBlock Background="#CDEFFD" Padding="5" FontWeight="SemiBold">HEADER - vaste hoogte van 40px, over 2 kolommen</TextBlock>
-            <TextBlock Background="#EFCDFD" Padding="10" TextWrapping="Wrap" FontSize="10">
+        <Grid Grid.Row="1" Background="#F3F3F3" Width="500" Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                       Background="#CDEFFD" Padding="5" FontWeight="SemiBold" VerticalAlignment="Stretch">
+                HEADER - vaste hoogte van 40px, over 2 kolommen
+            </TextBlock>
+
+            <TextBlock Grid.Row="1" Grid.Column="0"
+                       Background="#EFCDFD" Padding="10" TextWrapping="Wrap" FontSize="10">
                 ZIJBALK — neemt een kwart van de breedte in
             </TextBlock>
-            <TextBlock Background="#FEEDFD" Padding="10" TextWrapping="Wrap" FontSize="10">
+
+            <TextBlock Grid.Row="1" Grid.Column="1"
+                       Background="#FEEDFD" Padding="10" TextWrapping="Wrap" FontSize="10">
                 CONTENT — neemt driekwart van de breedte in
             </TextBlock>
-            <TextBlock Background="#CDFDEF" Padding="5" FontSize="8" FontStyle="Italic" TextAlignment="Center">footer - passend, over 2 kolommen, gecentreerd</TextBlock>
+
+            <TextBlock Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
+                       Background="#CDFDEF" Padding="5" FontSize="8" FontStyle="Italic" TextAlignment="Center">
+                footer - passend, over 2 kolommen, gecentreerd
+            </TextBlock>
         </Grid>
     </Grid>
 </Page>

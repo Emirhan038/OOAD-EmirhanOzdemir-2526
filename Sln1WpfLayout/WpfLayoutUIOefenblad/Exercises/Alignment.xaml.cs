@@ -10,4 +10,9 @@ public partial class Alignment : Page
     {
         InitializeComponent();
     }
+
+    private void Button_Click(object sender, System.Windows.RoutedEventArgs e)
+    {
+
+    }
 }

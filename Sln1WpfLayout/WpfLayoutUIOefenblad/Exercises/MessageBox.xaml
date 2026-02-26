@@ -10,13 +10,26 @@
 
     <Grid Background="White">
         <Grid.RowDefinitions>
-            <RowDefinition Height="250px"/>
+            <RowDefinition Height="250"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Frame x:Name="fraAssignment" Grid.Row="0" Grid.Column="0" Background="#eeeeee" />
-        <Grid Background="Beige" Grid.Row="1" Margin="20">
-            <!-- TODO: PAS HIERONDER DE XAML AAN -->
-            <Button x:Name="btnOpslaan" Content="Bestand opslaan" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20" Padding="8,3" />
+
+        <Frame x:Name="fraAssignment" 
+               Grid.Row="0" 
+               Background="#eeeeee" />
+
+        <Grid Background="Beige" 
+              Grid.Row="1" 
+              Margin="20">
+
+            <Button x:Name="btnOpslaan"
+                    Content="Bestand opslaan"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Margin="20"
+                    Padding="12,6"
+                    FontSize="14"
+                    Click="btnOpslaan_Click" />
         </Grid>
     </Grid>
 </Page>

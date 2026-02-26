@@ -14,8 +14,28 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Frame x:Name="fraAssignment" Grid.Row="0" Grid.Column="0" Background="#eeeeee" />
-        <Border Background="#EEEFFD" BorderBrush="#6B6CB0" BorderThickness="1" Padding="12" Margin="20" Grid.Row="1">
+        <Border Background="#EEEFFD" BorderBrush="#6B6CB0" BorderThickness="1" Padding="12" Margin="20,20,443,280" Grid.Row="1">
             <!-- TODO: PAS HIERONDER DE XAML AAN -->
+            <Grid MaxWidth="500" HorizontalAlignment="Left">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="140"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0" Orientation="Vertical">
+                    <Label FontWeight="Bold" Margin="0,0,0,10" Padding="5,0">Postcode:</Label>
+                    <TextBox BorderBrush="LightBlue" Height="30" VerticalContentAlignment="Center"/>
+                    <TextBlock Foreground="#666666" FontStyle="Italic" FontSize="10"
+                               TextAlignment="Right" Padding="5">b.v. 1234</TextBlock>
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" Orientation="Vertical" Margin="20,0,0,0">
+                    <Label FontWeight="Bold" Margin="0,0,0,10" Padding="5,0">Gemeente:</Label>
+                    <TextBox BorderBrush="LightBlue" Height="30" VerticalContentAlignment="Center"/>
+                    <TextBlock Foreground="#666666" FontStyle="Italic" FontSize="10"
+                               TextAlignment="Right" Padding="5">b.v. Lier</TextBlock>
+                </StackPanel>
+            </Grid>
         </Border>
     </Grid>
 </Page>

@@ -15,7 +15,47 @@
         </Grid.RowDefinitions>
         <Frame x:Name="fraAssignment" Grid.Row="0" Grid.Column="0" Background="#eeeeee" />
         <Border Background="White" BorderBrush="#6B6CB0" BorderThickness="1" Grid.Row="1" Margin="10" Height="200" Width="600">
-            <!-- TODO: PAS HIERONDER DE XAML AAN -->
+            <DockPanel>
+
+                <Menu DockPanel.Dock="Top">
+                    <MenuItem Header="File">
+                        <MenuItem Header="New" Click="MenuNew_Click"/>
+                        <MenuItem Header="Open..."/>
+                        <MenuItem Header="Save" IsEnabled="False"/>
+                        <Separator/>
+                        <MenuItem Header="Exit" Click="MenuExit_Click"/>
+                    </MenuItem>
+                    <MenuItem Header="Help">
+                        <MenuItem Header="Check for updates"/>
+                        <MenuItem Header="About" Click="MenuAbout_Click"/>
+                    </MenuItem>
+                </Menu>
+
+                <StatusBar DockPanel.Dock="Bottom">
+                    <StatusBarItem>
+                        <TextBlock Text="bestand: Tekst1.txt"/>
+                    </StatusBarItem>
+                    <StatusBarItem HorizontalAlignment="Right">
+                        <TextBlock Text="encoding: utf-8"/>
+                    </StatusBarItem>
+                </StatusBar>
+
+                <TabControl x:Name="tabControl">
+                    <TabItem Header="Tekst1.txt">
+                        <ScrollViewer VerticalScrollBarVisibility="Auto">
+                            <TextBox AcceptsReturn="True" BorderThickness="0"
+                                     TextWrapping="Wrap" Text="Hier staat tekst 1"/>
+                        </ScrollViewer>
+                    </TabItem>
+                    <TabItem Header="Untitled.txt">
+                        <ScrollViewer VerticalScrollBarVisibility="Auto">
+                            <TextBox AcceptsReturn="True" BorderThickness="0"
+                                     TextWrapping="Wrap"/>
+                        </ScrollViewer>
+                    </TabItem>
+                </TabControl>
+
+            </DockPanel>
         </Border>
     </Grid>
 </Page>
