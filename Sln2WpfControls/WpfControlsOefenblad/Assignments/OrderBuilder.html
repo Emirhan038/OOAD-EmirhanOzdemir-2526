@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Order Builder</title>
+   <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+   <h1>Order Builder</h1>
+
+   <p class="target">Doel: werken met <code>CheckBox</code> en <code>RadioButton</code>.</p>
+   <p>
+      Lees vooraf de theorie over de <a href="https://rogiervdl.github.io/CS-course/07_wpf.html#checkbox">CheckBox</a> en <a href="https://rogiervdl.github.io/CS-course/07_wpf.html#radiobutton">RadioButton</a>.
+   </p>
+
+   <h2>XAML</h2>
+   <p>Let op:</p>
+   <ul>
+      <li><code>IsChecked</code> is een nullable boolean: <code>true</code>, <code>false</code> of <code>null</code>: controleer meestal zo: <code>chkCheese.IsChecked == true</code>.</li>
+      <li>
+         RadioButtons horen bij elkaar wanneer ze dezelfde <code>GroupName</code> hebben; je kan dan maar één keuze maken uit die groep.
+      </li>
+   </ul>
+
+   <h2>XAML</h2>
+   <p>Alle margins en paddings zijn veelvouden van 5.</p>
+   <ul>
+      <li>Maak een <code>Grid</code> met één rij en drie gelijke kolommen</li>
+      <li>Steek in elke kolom een <code>StackPanel</code> met bovenaan telkens een <code>TextBlock</code> voor de titel (16px, semibold)</li>
+      <li>Voeg de overige checkboxen en radiobuttons toe; denk eraan de radiobuttons dezelfde <code>GroupName</code> te geven.</li>
+      <li>Selecteer de eerste en derde checkbox met <code>IsChecked</code></li>
+      <li>Geef alle controls die je nodig hebt in de code-behind een naam in Hongaarse notatie.</li>
+      <li>Voeg onderaan de tweede kolom een <code>StackPanel</code> toe voor de twee buttons</li>
+      <li>Voeg tenslotte onderaan de derde kolom een <code>TextBlock</code> toe voor de samenvattingstekst.</li>
+   </ul>
+
+   <h2>Code-behind</h2>
+   <ul>
+      <li>Koppel aan de bevestigknop een <code>Click</code>-event.</li>
+      <li>Lees de gekozen leveringsmethode uit de radio buttons.</li>
+      <li>Als er geen leveringsmethode gekozen is, toon de tekst "Kies eerst een leveringsmethode".</li>
+      <li>Overloop dan één voor een de checkboxes; steek de aangevinkte keuzes in een <code>List&lt;string&gt;</code></li>
+      <li>Toon in <code>txtSummary</code> een samenvatting in twee regels naar voorbeeld van de screenshot</li>
+      <li>Implementeer tenslotte de resetknop, die alles reset naar de oorspronkelijke toestand</li>
+   </ul>
+   <figure>
+      <p><img src="img/OrderBuilder1.png" alt="" width="500"></p>
+      <p><img src="img/OrderBuilder2.png" alt="" width="500"></p>
+   </figure>
+
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+﻿<Page x:Class="WpfControlsOefenblad.Exercises.LiveFormValidation"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:WpfControlsOefenblad.Exercises"
+      mc:Ignorable="d"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="LiveFormValidation">
+
+    <Grid Background="#eeeeee">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="220"/>
+        </Grid.RowDefinitions>
+
+        <Frame x:Name="fraAssignment" Grid.Row="0" />
+        <Border Background="White" Grid.Row="1">
+            <!-- HIERONDER BEGINT XAML VAN DE OEFENING -->
+            <Grid Margin="40,25,40,25">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="320"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="Paswoord:" VerticalAlignment="Center" Margin="10"/>
+                <TextBox x:Name="txtPaswoord" Grid.Column="1" Padding="5" Margin="10,0" TextChanged="txtPaswoord_TextChanged" />
+                <TextBlock Grid.Row="1" Grid.Column="1" TextWrapping="Wrap" FontStyle="Italic" Text="minstens 1 hoofdletter, 1 cijfer en 8 tekens lang" Opacity="0.7" Margin="10,5"/>
+                <Button x:Name="btnSave" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Right" Margin="10" Content="Opslaan" Padding="10,5" IsEnabled="False" />
+                <Border Grid.Row="0" Grid.Column="2" Grid.RowSpan="3" Background="#FFF7D6" BorderBrush="#E6D39B" BorderThickness="1" CornerRadius="6" Padding="12" Margin="20,0,0,0">
+                    <StackPanel>
+                        <TextBlock Text="Status" FontSize="15" FontWeight="SemiBold" Margin="0,0,0,8"/>
+                        <TextBlock x:Name="txtStatus" Text="..." Margin="0,0,0,6"/>
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </Border>
+    </Grid>
+</Page>

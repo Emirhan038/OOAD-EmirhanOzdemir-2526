@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Chatbox</title>
+   <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+   <h1>Chatbox</h1>
+   <p class="target">Doel: tekst over meerdere regels van een <code>TextBox</code> met <code>TextWrapping</code> en <code>AcceptsReturn</code> properties. Tekstopmaak in een <code>TextBlock</code> met <code>Bold</code>.</p>
+
+   <h2>XAML</h2>
+   <p>Het grootste deel van de XAML is reeds gegeven. Vul aan:</p>
+   <ul>
+      <li>Om in de tweede <code>TextBox</code> meerdere regels te kunnen typen, heb je twee attributen nodig: <code>AcceptsReturn="True"</code> en TextWrapping="Wrap". Voeg ze toe in de XAML.</li>
+      <li>Voeg een scrollbar toe aan de <code>TextBlock</code> met <code>ScrollViewer</code>. Let op dat attributen als <code>Grid.Column</code> en <code>Margin</code> naar de <code>ScrollViewer</code> moeten verplaatst worden.</li>
+   </ul>
+
+   <h2>Code-behind</h2>
+   <ul>
+      <li>Koppel een <code>Click</code>-event aan de Button.</li>
+      <li>
+         Vul de event handler in zodat bij verzenden het nieuw bericht rechts verschijnt; wis de velden links
+         <br><em>Tip: om de naam vet te zetten, zie <a href="https://rogiervdl.github.io/CS-course/07_wpf.html#tekst-met-opmaak">deze uitleg</a></em>
+      </li>
+   </ul>
+   <figure>
+      <p><img src="img/ChatBox1.png" alt="" width="500"></p>
+      <p><img src="img/ChatBox2.png" alt="" width="500"></p>
+   </figure>
+
+
+</body>
+
+</html>

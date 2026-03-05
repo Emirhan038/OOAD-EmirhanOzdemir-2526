@@ -1,0 +1,58 @@
+<Page x:Class="WpfControlsOefenblad.Exercises.ChatBox"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfControlsOefenblad.Exercises"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="MultilineTextBox">
+
+    <Grid Background="#eeeeee">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="300"/>
+        </Grid.RowDefinitions>
+        <Frame x:Name="fraAssignment" Grid.Row="0" Grid.Column="0" />
+        <Border Background="White" Grid.Row="1">
+            <!-- HIERONDER BEGINT XAML VAN DE OEFENING -->
+            <Grid Background="#FFDBEAF0" MaxWidth="700">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="300"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Label x:Name="lblName" Content="Naam:" Grid.Row="0" Grid.Column="0" Margin="10,30,10,10" VerticalAlignment="Center"/>
+                    <TextBox x:Name="inpName" Grid.Row="0" Grid.Column="1" Height="30" Margin="10,30,10,10" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="lblMessage" Content="Bericht:" Grid.Row="1" Grid.Column="0" Margin="10" VerticalAlignment="Top"/>
+                    <TextBox x:Name="inpMessage" Grid.Row="1" Grid.Column="1" Margin="10"
+                             AcceptsReturn="True"
+                             TextWrapping="Wrap"
+                             VerticalScrollBarVisibility="Auto"/>
+                    <Button x:Name="btnAdd" Content="VERZENDEN" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" Margin="10,10,10,30" Width="95" Height="25"
+                            Click="btnAdd_Click"/>
+                </Grid>
+
+                <ScrollViewer Grid.Column="1" Margin="10,30" VerticalScrollBarVisibility="Auto">
+                    <TextBlock x:Name="txtChat" TextWrapping="Wrap" Padding="10,5" Background="White">
+                        <Bold>Alice:</Bold>
+                        On your computer, go to my computer<LineBreak/><LineBreak/>
+                        <Bold>Bobby:</Bold>
+                        Where is your computer?<LineBreak/><LineBreak/>
+                        <Bold>Clive:</Bold>
+                        She means the folder is in my computer on your computer<LineBreak/><LineBreak/>
+                    </TextBlock>
+                </ScrollViewer>
+            </Grid>
+        </Border>
+    </Grid>
+</Page>

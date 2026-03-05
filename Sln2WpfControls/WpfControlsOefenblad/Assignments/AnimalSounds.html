@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Animal sounds</title>
+   <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+   <h1>Animal sounds</h1>
+
+   <p class="target">Doel: media toevoegen aan je project; gebruik <code>SoundPlayer</code>; gebruik <code>Tag</code> property.</p>
+   <p>
+      We tonen vier afbeeldingen van dieren; bij een mouse over klinkt het geluid van dat dier.
+   </p>
+
+   <h2>Media toevoegen aan je project</h2>
+   <ul>
+      <li>
+         Maak in de folder <em>Exercises</em> twee subfolders: <em>Images</em> en <em>Sounds</em>
+      </li>
+      <li>
+         Sleep daarin de geluiden en de afbeeldingen meegegeven bij deze oefening (zie Toledo)
+      </li>
+      <li>
+         Stel geluiden en afbeeldingen in als content, en laat ze mee kopiëren naar de output directory, zie <a href="https://rogiervdl.github.io/DEVENV-course/04_visualstudio.html#media-en-andere-bestanden-toevoegen">deze uitleg</a>
+      </li>
+   </ul>
+
+   <h2>XAML</h2>
+   <ul>
+      <li>
+         Maak een <code>WrapPanel</code> met daarin vier afbeeldingen met <code>Image</code>; stel hoogte en breedte in op 100px.
+      </li>
+      <li>
+         Voeg aan elke <code>Image</code> een <code>Tag</code> attribuut toe met het pad naar het af te spelen geluid
+      </li>
+   </ul>
+
+   <h2>Code-behind</h2>
+   <ul>
+      <li>
+         Voeg dezelfde <code>MouseEnter</code> event handler toe aan de vier afbeeldingen (een <code>Image</code> kent geen <code>Click</code> event)
+      </li>
+      <li>
+         In de event handler: speel het geluid af met <code>SoundPlayer</code>, zie <a href="https://rogiervdl.github.io/CS-course/A_dotnet.html#soundplayer">deze uitleg</a>
+      </li>
+   </ul>
+   <figure>
+      <p><img src="img/AnimalSounds.png" alt="" width="500"></p>
+   </figure>
+
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<Page x:Class="WpfControlsOefenblad.Exercises.Welkom"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:WpfControlsOefenblad.Exercises"
+      mc:Ignorable="d"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="BasicTextBox">
+
+    <Grid Background="#eeeeee">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="200"/>
+        </Grid.RowDefinitions>
+
+        <Frame x:Name="fraAssignment" Grid.Row="0" />
+
+        <Border Background="White" Grid.Row="1">
+            <!-- HIERONDER BEGINT XAML VAN DE OEFENING -->
+            <Grid MaxWidth="400" HorizontalAlignment="Left" Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Label x:Name="lblNaam"
+                       Content="Naam:"
+                       Grid.Row="0" Grid.ColumnSpan="2"
+                       Margin="0,5,0,0" Padding="2,2,2,2"/>
+
+                <TextBox x:Name="txtNaam" Grid.Column="0"
+                         Margin="0,25,0,40" Padding="4,4,4,4"
+                         VerticalContentAlignment="Center" HorizontalAlignment="Left" Grid.RowSpan="3" Width="172" Grid.ColumnSpan="2"/>
+
+                <Button x:Name="btnZegHallo"
+                        Content="Zeg Hallo" Grid.Column="1"
+                        Margin="86,24,-86,1" Padding="6,4,6,4"
+                        Click="btnZegHallo_Click" Grid.RowSpan="2"/>
+
+                <TextBlock x:Name="tblFout"
+                           Text="gelieve een naam in te vullen"
+                           Grid.Row="2" Grid.ColumnSpan="2"
+                           Margin="0,4,0,0" Padding="2,0,2,0"
+                           FontStyle="Italic"
+                           Foreground="#990000"
+                           Visibility="Visible"/>
+
+                <TextBlock x:Name="tblWelkom"
+                           Text="..."
+                           Grid.Row="3" Grid.ColumnSpan="2"
+                           Margin="0,8,0,0" Padding="2,0,2,0"
+                           FontSize="16"
+                           FontWeight="SemiBold"/>
+            </Grid>
+        </Border>
+    </Grid>
+</Page>

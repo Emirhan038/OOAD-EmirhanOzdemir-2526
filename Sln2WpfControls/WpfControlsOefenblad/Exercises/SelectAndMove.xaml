@@ -1,0 +1,55 @@
+﻿<Page x:Class="WpfControlsOefenblad.Exercises.SelectAndMove"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:WpfControlsOefenblad.Exercises"
+      mc:Ignorable="d"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="SelectAndMove">
+
+    <Grid Background="#eeeeee">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="240"/>
+        </Grid.RowDefinitions>
+        <Frame x:Name="fraAssignment" Grid.Row="0" />
+        <Border Background="White" Grid.Row="1">
+            <!-- HIERONDER BEGINT XAML VAN DE OEFENING -->
+            <Grid Margin="20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="140"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="Beschikbaar" FontSize="16" FontWeight="SemiBold" Margin="10"/>
+
+                <ListBox x:Name="lstBeschikbaar" Grid.Row="1" Grid.Column="0" Margin="10"
+                         SelectionChanged="ListBox_SelectionChanged">
+                    <ListBoxItem Content="C#"/>
+                    <ListBoxItem Content="Java"/>
+                    <ListBoxItem Content="JavaScript"/>
+                    <ListBoxItem Content="Python"/>
+                    <ListBoxItem Content="SQL"/>
+                </ListBox>
+
+                <StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Button x:Name="btnToSelected"  Content="→" Width="70" Height="30" Margin="10"
+                            IsEnabled="False" Click="btnToSelected_Click"/>
+                    <Button x:Name="btnToAvailable" Content="←" Width="70" Height="30"
+                            IsEnabled="False" Click="btnToAvailable_Click"/>
+                </StackPanel>
+
+                <TextBlock Grid.Row="0" Grid.Column="2" Text="Geselecteerd" FontSize="16" FontWeight="SemiBold" Margin="10"/>
+
+                <ListBox x:Name="lstGeselecteerd" Grid.Row="1" Grid.Column="2" Margin="10"
+                         SelectionChanged="ListBox_SelectionChanged"/>
+            </Grid>
+        </Border>
+    </Grid>
+</Page>

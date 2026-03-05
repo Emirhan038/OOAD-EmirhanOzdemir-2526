@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>OXO</title>
+   <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+   <h1>OXO</h1>
+
+   <p class="target">Doel: werken met <code>sender</code> object.</p>
+   <p>
+      Bouw een eenvoudig OXO-spel waarbij afwisselend "O" of "X" verschijnt. De winnaar bepalen is niet zo eenvoudig en maakt geen deel uit van deze oefening.
+   </p>
+   <p>
+      Meerdere controls kunnen dezelfde event handler gebruiken. In de event handler is <code>sender</code> de control die het event veroorzaakte (zie <a href="https://rogiervdl.github.io/CS-course/07_wpf.html#event-sender">theorie</a>). 
+      We gebruiken het in deze oefening om één <code>Click</code>-event aan de 9 buttons te koppelen.
+   </p>
+
+   <h2>XAML</h2>
+   <p>Gegeven is een 3x3 <code>Grid</code> met buttons</p>
+   <ul>
+      <li>
+         Voeg een <code>Click</code> event toe aan de eerste button. Hernoem de event handler naar <code>OxoButton_Click</code> (gebruik de rechtermuisnknop). 
+      </li>
+      <li>
+         Kopieer in de XAML het <code>Click</code> attribuut met verwijzing naar de eventhandler naar de andere 8 buttons.
+      </li>
+      <li>
+         In de event handler vraag je eerst de button waarop geklikt werd op via het <code>sender</code> object. Toon afwisselend een 'O' of 'X'. Disable telkens de button.
+      </li>
+   </ul>
+   <figure>
+      <p><img src="img/SenderOxo.png" alt="" width="200"></p>
+   </figure>
+
+</body>
+
+</html>

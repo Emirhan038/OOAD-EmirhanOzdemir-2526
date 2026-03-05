@@ -39,6 +39,7 @@
                         <TextBlock Text="encoding: utf-8"/>
                     </StatusBarItem>
                 </StatusBar>
+                
 
                 <TabControl x:Name="tabControl">
                     <TabItem Header="Tekst1.txt">

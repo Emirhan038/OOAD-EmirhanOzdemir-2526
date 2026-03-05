@@ -1,0 +1,43 @@
+﻿<Page x:Class="WpfControlsOefenblad.Exercises.SenderOxo"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfControlsOefenblad.Exercises"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="SenderOxo">
+
+    <Grid Background="#eeeeee">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="220"/>
+        </Grid.RowDefinitions>
+        <Frame x:Name="fraAssignment" Grid.Row="0" />
+        <Border Background="White" Grid.Row="1">
+            <!-- HIERONDER BEGINT XAML VAN DE OEFENING -->
+            <Grid Margin="20" x:Name="grdOxo">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="50"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Row="0" Grid.Column="0" Tag="1,1" Padding="5" Margin="5" Click="OxoButton_Click"/>
+                <Button Grid.Row="0" Grid.Column="1" Tag="1,2" Padding="5" Margin="5" Click="OxoButton_Click"/>
+                <Button Grid.Row="0" Grid.Column="2" Tag="1,3" Padding="5" Margin="5" Click="OxoButton_Click"/>
+                <Button Grid.Row="1" Grid.Column="0" Tag="2,1" Padding="5" Margin="5" Click="OxoButton_Click"/>
+                <Button Grid.Row="1" Grid.Column="1" Tag="2,2" Padding="5" Margin="5" Click="OxoButton_Click"/>
+                <Button Grid.Row="1" Grid.Column="2" Tag="2,3" Padding="5" Margin="5" Click="OxoButton_Click"/>
+                <Button Grid.Row="2" Grid.Column="0" Tag="3,1" Padding="5" Margin="5" Click="OxoButton_Click"/>
+                <Button Grid.Row="2" Grid.Column="1" Tag="3,2" Padding="5" Margin="5" Click="OxoButton_Click"/>
+                <Button Grid.Row="2" Grid.Column="2" Tag="3,3" Padding="5" Margin="5" Click="OxoButton_Click"/>
+            </Grid>
+        </Border>
+    </Grid>
+</Page>

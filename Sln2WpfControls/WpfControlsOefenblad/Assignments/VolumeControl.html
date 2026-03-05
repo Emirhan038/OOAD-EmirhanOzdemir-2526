@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Volume Control</title>
+   <link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+<body>
+
+   <h1>Volume Control</h1>
+
+   <p class="target">Doel: werken met <code>Slider</code> en <code>ValueChanged</code> event.</p>
+   <p>
+      Lees vooraf de theorie over de <a href="https://rogiervdl.github.io/CS-course/07_wpf.html#slider">Slider</a>. Bestudeer vooral de properties <code>Minimum</code>, <code>Value</code> enz.
+   </p>
+
+   <h2>XAML</h2>
+   <p>Een groot deel is al gegeven.</p>
+   <ul>
+      <li>Voeg een <code>Slider</code> toe onder de <code>TextBlock</code> met een bereik 0 tot 100, in sprongen van 5; stel de waarde in op 40.</li>
+      <li>Geef de drie controls een naam (Hongaarse notatie zoals steeds)</li>
+   </ul>
+
+   <h2>Code-behind</h2>
+   <ul>
+      <li>Koppel het <code>ValueChanged</code>-event aan de Slider.</li>
+      <li>Toon de waarde van het volume in de TextBlock.</li>
+      <li>Maak de <code>Border</code> groen bij waarden minder dan 20, geel bij minder dan 40, oranje bij minder dan 60, rood bij minder dan 80 en anders donkerrood.</li>
+      <li>Stel de procentuele breedte van de <code>Border</code> in op het volume.</li>
+   </ul>
+   <figure>
+      <p><img src="img/VolumeControl1.png" alt="" width="350"></p>
+      <p><img src="img/VolumeControl2.png" alt="" width="350"></p>
+      <p><img src="img/VolumeControl3.png" alt="" width="350"></p>
+   </figure>
+
+</body>
+
+</html>

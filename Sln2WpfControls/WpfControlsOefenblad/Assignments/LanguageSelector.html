@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Language Selector</title>
+   <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+   <h1>Language Selector</h1>
+   <p class="target">Doel: werken met <code>ComboBox</code>/<code>ComboBoxItem</code> en <code>SelectionChanged</code> event.</p>
+   <p>
+      Lees vooraf de theorie over de <a href="https://rogiervdl.github.io/CS-course/07_wpf.html#combobox">ComboBox</a>.
+   </p>
+
+   <h2>XAML</h2>
+   <ul>
+      <li>
+         Maak een <code>StackPanel</code> met een <code>ComboBox</code> en een <code>TextBlock</code> (16px, <code>SemiBold</code>).
+      </li>
+      <li>
+         Voeg aan de <code>ComboBox</code> een <code>ComboBoxItem</code> toe met waarde "Kies je taal..."; selecteer het met de <code>IsSelected</code> property;
+      </li>
+   </ul>
+   <h2>Code-behind</h2>
+   <ul>
+      <li>
+         In de code-behind, in de constructor onder <code>InitializeComponent()</code>:
+         <ul>
+            <li>maak een array <code>languages</code> met drie waarden: "Nederlands", "English", "Français"</li>
+            <li>voeg met <code>foreach</code> voor elke taal een <code>ComboBoxItem</code> toe</li>
+         </ul>
+      </li>
+      <li>
+         Voeg een <code>SelectionChanged</code> event toe aan de <code>ComboBox</code>, waarmee je in de <code>TextBlock</code> een begroeting toont naargelang de gekozen taal: Hallo, Hello of Bonjour. Gebruik een <code>switch</code>-<code>case</code> op de taal, geen if-else-if.
+      </li>
+      <li>
+         Zet het gekozen <code>ComboBoxItem</code> in <code>Bold</code>; zet de andere items terug op <code>Normal</code>.
+      </li>
+   </ul>
+   <figure>
+      <p><img src="img/LanguageSelector1.png" alt="" width="200"></p>
+      <p><img src="img/LanguageSelector2.png" alt="" width="200"></p>
+      <p><img src="img/LanguageSelector3.png" alt="" width="200"></p>
+   </figure>
+
+</body>
+
+</html>

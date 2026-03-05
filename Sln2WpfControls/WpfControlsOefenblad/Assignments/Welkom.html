@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Welkom</title>
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+	<h1>Welkom</h1>
+	<p class="target">Doel: gebruik <code>TextBox</code> en <code>Text</code> property. </p>
+
+	<h2>XAML</h2>
+	<ul>
+		<li>Maak een <code>Grid</code> met twee kolommen, de laatste 100px breed, en vier rijen: de eerste twee <code>Auto</code>, de derde 40px hoog en de vierde de rest. De maximum breedte is 400px.</li>
+		<li>Voeg de controls toe: 1x <code>Label</code>, 1x <code>TextBox</code>, 1x <code>Button</code> en 2x <code>TextBlock</code>. Let er op dat alle controls in de XAML in de <strong>juiste volgorde</strong> staan!</li>
+		<li>Geef alle controls een naam; gebruik overal de <strong>Hongaarse notatie</strong>, dus <code>btnVerzenden</code>, <code>txtNaam</code>, <code>imgPhoto</code>, etc.</li>
+		<li>Werk alle controls af met <code>Margin</code> en <code>Padding</code>.</li>
+		<li>De foutmelding staat schuin, kleur is <code>#900</code>; verberg het met <code>Visibility</code></li>
+		<li>De tekst onderaan is 16px, <code>SemiBold</code></li>
+	</ul>
+	<figure>
+		<img src="img/WelkomXaml.png" alt="" width="600">
+	</figure>
+
+	<h2>Code-behind, deel 1: tonen welkomsttekst</h2>
+	<ul>
+		<li>Koppel een <code>Click</code>-event aan de Button .</li>
+		<li>Vul de code-behind in zodat bij een geldige invoer de tekst <strong>Welkom, &lt;naam&gt;!</strong> verschijnt (lees de <code>Text</code> property van de <code>TextBox</code>)</li>
+	</ul>
+	<figure>
+		<img src="img/WelkomClick.png" alt="" width="300">
+	</figure>
+
+	<h2>Code-behind, deel 2: validatie en Trim</h2>
+	<ul>
+		<li>Gebruik <code>Trim()</code> zodat spaties voor en na de naam worden verwijderd.</li>
+		<li>Controleer of de invoer leeg is of alleen uit spaties bestaat.</li>
+		<li>Indien leeg: maak de foutmelding zichtbaar, en zet de tekst onderaan terug naar "<strong>...</strong>".</li>
+		<li>Indien niet leeg: verberg de foutmelding weer</li>
+	</ul>
+	<figure>
+		<img src="img/WelkomValidate.png" alt="" width="300">
+	</figure>
+
+</body>
+
+</html>

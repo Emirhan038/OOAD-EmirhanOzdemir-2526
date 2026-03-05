@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Live Form Validation</title>
+   <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+   <h1>Live Form Validation</h1>
+
+   <p class="target">Doel: gebruik <code>TextChanged</code> event.</p>
+   <p>
+      Bouw een eenvoudige wachtwoordvalidator: tijdens het typen wordt gecontroleerd of het wachtwoord voldoet aan volgende regels:
+   </p>
+   <ul>
+      <li>minstens 8 tekens lang</li>
+      <li>minstens één hoofdletter</li>
+      <li>minstens één cijfer</li>
+   </ul>
+
+   <h2>XAML</h2>
+   <p>De XAML is reeds gegeven.</p>
+   <h2>Code-behind</h2>
+   <ul>
+      <li>
+         Koppel een <code>TextChanged</code>-event aan de <code>TextBox</code>.
+      </li>
+      <li>
+         In de handler: als het wachtwoord leeg is, wis de statustekst en disable de button.
+         <br><em>tip: gebruik <code>string.IsNullOrWhiteSpace()</code></em>
+      </li>
+      <li>
+         Als het wachtwoord geldig is, toon de tekst "Geldig paswoord", anders de tekst "ongeldig paswoord". 
+      </li>
+      <li>De statustekst staat in het groen of rood (<code>DarkGreen</code> of <code>Red</code>) naargelang het paswoord geldig is of niet.</li>
+      <li>De button is enkel enabled als het paswoord ingevuld en geldig is</li>
+   </ul>
+   <p>
+      <em>Tip: voor de validatie kan je handig gebruik maken van de Linq extensie methode <code>Any()</code>, samen met de <code>char</code> methodes <code>IsLetter()</code>, <code>IsUpper()</code> en <code>IsDigit()</code>:</em>
+   </p>
+   <ul>
+      <li><em>voeg eerst <code>System.Linq</code> toe bovenaan</em></li>
+      <li><em>controle op cijfer kan dan bv. met <code>if (!password.Any(c => char.IsDigit(c)))...</code></em></li>
+   </ul>
+   <figure>
+      <p><img src="img/LiveFormValidator1.png" alt="" width="500"></p>
+      <p><img src="img/LiveFormValidator2.png" alt="" width="500"></p>
+      <p><img src="img/LiveFormValidator3.png" alt="" width="500"></p>
+      <p><img src="img/LiveFormValidator4.png" alt="" width="500"></p>
+   </figure>
+
+</body>
+
+</html>

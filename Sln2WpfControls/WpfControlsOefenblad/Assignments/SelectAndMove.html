@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Select And Move</title>
+   <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+   <h1>Select And Move</h1>
+
+   <p class="target">Doel: gebruik <code>ListBox</code>/<code>ListBoxItem</code> met het <code>SelectionChanged</code> event.</p>
+   <p>
+      Lees eerst grondig de <a href="https://rogiervdl.github.io/CS-course/07_wpf.html#listbox">theorie over de ListBox</a>.
+      Een <code>ListBox</code> toont een lijst met items. In theorie kan een item vanalles zijn, zelfs een zuivere <code>string</code>, 
+      maar maak er een goede gewoonte van enkel objecten van het type <code>ListBoxItem</code> toe te voegen. Gebruik verder properties als <code>Items</code>, <code>SelectedItem</code> en <code>SelectedIndex</code>, en het <code>SelectionChanged</code> event.
+   </p>
+
+   <h2>XAML</h2>
+   <p>Een gedeelte van de XAML is al voorzien.</p>
+   <ul>
+      <li>Voeg twee ListBoxes toe: een listbox links met startitems C#, Java, JavaScript, Python, SQL; en een lege listbox rechts</li>
+      <li>Disable beide buttons met <code>IsEnabled</code></li>
+   </ul>
+
+   <h2>Code-behind</h2>
+   <ul>
+      <li>
+         Voeg een <code>Click</code>-event toe aan elk van de buttons. Bij klik:
+         <ul>
+            <li>vraag het geselecteerde item op met de <code>SelectedItem</code> property</li>
+            <li>verwijder dit item uit de geselecteerde lijst met <code>Remove()</code></li>
+            <li>verwijder dit item toe aan de andere lijst met <code>Add()</code></li>
+         </ul>
+      </li>
+      <li>
+         Zorg er nu voor dat de buttons enkel enabled zijn als een item in de relevante lijst geselecteerd is:
+         <ul>
+            <li>voeg aan beide <code>ListBox</code>-en een <code>SelectionChanged</code> event handler toe; gebruik dezelfde event handler voor beiden</li>
+            <li>stel de button states in: de bovenste button is enabled als er een item links geselecteerd is, en analoog voor de onderste button</li>
+         </ul>
+      </li>
+   </ul>
+   <figure>
+      <p><img src="img/SelectAndMove1.png" alt="" width="600"></p>
+      <p><img src="img/SelectAndMove2.png" alt="" width="600"></p>
+      <p><img src="img/SelectAndMove3.png" alt="" width="600"></p>
+   </figure>
+
+</body>
+
+</html>
