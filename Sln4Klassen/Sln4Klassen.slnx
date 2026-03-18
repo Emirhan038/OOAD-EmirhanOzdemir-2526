@@ -1,4 +1,5 @@
 <Solution>
+  <Project Path="ConsoleKaartspel/ConsoleKaartspel.csproj" Id="08890802-b8c5-4da4-bd1a-06ca2b7e7990" />
   <Project Path="ConsoleKlassenOefenblad/ConsoleKlassenOefenblad.csproj" />
   <Project Path="WpfPlaylist startversie/WpfPlaylist.csproj" />
 </Solution>
