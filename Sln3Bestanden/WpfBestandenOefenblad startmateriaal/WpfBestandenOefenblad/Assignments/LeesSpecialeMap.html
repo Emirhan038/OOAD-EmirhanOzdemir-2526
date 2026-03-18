@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Lees speciale map</title>
+   <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+   <h1>Lees speciale map</h1>
+
+   <p class="target">
+      Doel: gebruik <a href="https://rogiervdl.github.io/CS-course/09_bestanden.html#systeemmappen-vinden">speciale mappen</a> (<em>Desktop</em>, <em>Mijn Documenten</em>, <em>Mijn Afbeeldingen</em>...), <a href="https://rogiervdl.github.io/CS-course/09_bestanden.html#map-inhoud-lezen">lezen mapinhoud</a> en <a href="https://rogiervdl.github.io/CS-course/09_bestanden.html#informatie-opvragen">bestandsinfo opvragen</a>
+   </p>
+
+   <h2>XAML</h2>
+   <p>
+      De XAML is gegeven.
+   </p>
+
+   <h2>Code-behind</h2>
+   <ol>
+      <li>
+         Voeg één click event handler toe voor de drie buttons; gebruik <code>sender</code> zoals geleerd in de vorige les om de juiste button op te halen
+      </li>
+      <li>
+         Bepaal uit het <code>Tag</code> attribuut van de geklikte button om welke speciale folder het gaat (<code>Environment.SpecialFolder folder = ...</code>) 
+      </li>
+      <li>
+         Vraag de bestanden van die speciale folder op met <code>Directory.GetFiles()</code>
+      </li>
+      <li>
+         Itereer over de bestanden; vraag de informatie op met <code>FileInfo</code> en toon het zoals op de screenshot hieronder
+      </li>
+   </ol>
+   <p>Screenshot:</p>
+   <figure>
+      <img src="img/LeesSpecialeMap.png" alt="" width="500">
+   </figure>
+
+</body>
+
+</html>

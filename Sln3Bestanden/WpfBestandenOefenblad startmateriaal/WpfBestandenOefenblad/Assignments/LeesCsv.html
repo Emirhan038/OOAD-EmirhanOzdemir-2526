@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Lees CSV</title>
+   <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+   <h1>Lees CSV</h1>
+
+   <p class="target">
+      Doel: een CSV-bestand inlezen en gegevens tonen/verwerken.
+   </p>
+
+   <h2>Voorbeeld CSV (in Exercises/Files)</h2>
+   <p>Bij de opgave krijg je een bestand <em>verkoop.csv</em> met volgende structuur:</p>
+   <pre>Product;Quantity;Price
+Laptop;5;899
+Mouse;12;25
+Keyboard;7;45
+Laptop;3;899
+Mouse;4;25
+...</pre>
+   <p>De eerste rij stellen de headers (titels) voor, de volgende rijen telkens één record</p>
+
+   <h2>Project</h2>
+   <ol>
+      <li>maak een map <em>Exercises/Files</em> en kopieer daarin het bestand <em>verkoop.csv</em></li>
+      <li>stel het in als Content en laat het mee kopiëren naar de output folder zoals geleerd vorige les (zie ook de <a href="https://rogiervdl.github.io/DEVENV-course/04_visualstudio.html#media-en-andere-bestanden-toevoegen">DEVENV cursus</a>)</li>
+   </ol>
+
+   <h2>XAML</h2>
+   <ol>
+      <li>Maak een <code>Grid</code> met drie rijen: <code>Auto</code>, <code>*</code> en <code>Auto</code></li>
+      <li>Steek in de eerste rij een <code>Button</code>, in de tweede een <code>ListBox</code> en de derde een <code>TextBlock</code></li>
+   </ol>
+
+   <h2>Code-behind</h2>
+   <p>Bij druk op de knop:</p>
+   <ol>
+      <li>wis de lijst en de tekst onderaan</li>
+      <li>lees het CSV bestand met <code>File.ReadAllLines()</code></li>
+      <li>splits elke rij rond de puntkomma's, en voeg een item toe aan de lijst</li>
+      <li>bepaal het totaalbedrag door telkens prijs met aantal te vermenigvuldigen, en toon het onderaan</li>
+   </ol>
+   <p>Screenshot:</p>
+   <figure>
+      <img src="img/LeesCsv.png" alt="" width="500">
+   </figure>
+
+</body>
+
+</html>

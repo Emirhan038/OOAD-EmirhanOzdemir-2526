@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Schrijf tekst</title>
+   <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+   <h1>Schrijf tekst</h1>
+
+   <p class="target">
+      Doel: tekst kunnen opslaan in een bestand via <code>SaveFileDialog</code> en <code>File.WriteAllText()</code>.
+   </p>
+
+   <h2>XAML</h2>
+   <ol>
+      <li>
+         Voeg een <code>StackPanel</code> toe met een <code>Label</code>, een <code>TextBox</code> (meerdere regels!) en een <code>Button</code>.
+      </li>
+   </ol>
+
+   <h2>Code-behind</h2>
+   <ol>
+      <li>
+         Bij klik op de knop: toon een <code>SaveFileDialog</code> (namespace <code>Microsoft.Win32</code>), stel de filter in op teksten (<code>*.txt</code>), de startfolder op <em>Mijn documenten</em> en de standaard filename op <em>untitled.txt</em>. .
+      </li>
+      <li>
+         Schrijf bij bevestiging de tekst weg met <code>File.WriteAllText()</code>.
+      </li>
+   </ol>
+   <p>Tip: genereer een random tekst op <a href="https://randomtextgenerator.com/">https://randomtextgenerator.com/</a></p>
+   <p>Screenshot:</p>
+   <figure>
+      <img src="img/SchrijfTekst.png" alt="" width="500">
+   </figure>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Mp3\belvedere-assiege-1m.mp3" />
+    <None Remove="Mp3\great-indian-desert-1m.mp3" />
+    <None Remove="Mp3\habibi-1m.mp3" />
+    <None Remove="Mp3\raf-raf-1m.mp3" />
+    <None Remove="Mp3\ronda-1m.mp3" />
+    <None Remove="Mp3\samba-1m.mp3" />
+    <None Remove="Mp3\yero-mama-1m.mp3" />
+    <None Remove="Photos\anouar-brahem.jpg" />
+    <None Remove="Photos\baaba-maal.jpg" />
+    <None Remove="Photos\mohammed-abdu.jpg" />
+    <None Remove="Photos\zakir-houssein.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Mp3\belvedere-assiege-1m.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Mp3\great-indian-desert-1m.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Mp3\habibi-1m.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Mp3\raf-raf-1m.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Mp3\ronda-1m.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Mp3\samba-1m.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Mp3\yero-mama-1m.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Photos\anouar-brahem.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Photos\baaba-maal.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Photos\mohammed-abdu.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Photos\zakir-houssein.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+</Project>

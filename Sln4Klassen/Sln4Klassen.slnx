@@ -1,1 +1,4 @@
-<Solution />
+<Solution>
+  <Project Path="ConsoleKlassenOefenblad/ConsoleKlassenOefenblad.csproj" />
+  <Project Path="WpfPlaylist startversie/WpfPlaylist.csproj" />
+</Solution>

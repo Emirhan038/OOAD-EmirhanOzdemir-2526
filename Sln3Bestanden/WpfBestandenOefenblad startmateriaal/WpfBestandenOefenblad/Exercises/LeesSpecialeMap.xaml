@@ -1,0 +1,35 @@
+<Page x:Class="WpfBestandenOefenblad.Exercises.LeesSpecialeMap"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:WpfBestandenOefenblad.Exercises"
+      mc:Ignorable="d"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="LeesSpecialeMap">
+
+    <Grid Background="#eeeeee">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="300"/>
+        </Grid.RowDefinitions>
+        <Frame x:Name="fraAssignment" Grid.Row="0" Grid.Column="0" />
+        <Border Background="White" Grid.Row="1">
+            <!-- XAML VAN DE OEFENING -->
+            <Grid Margin="20" Background="AliceBlue" MaxWidth="600">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="10">
+                    <Button Content="Desktop" Tag="Desktop" Padding="8,4" Margin="5" />
+                    <Button Content="Documenten" Tag="Documenten" Padding="8,4" Margin="5" />
+                    <Button Content="Afbeeldingen" Tag="Afbeeldingen" Margin="5" Padding="8,4" />
+                </StackPanel>
+                <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" Margin="15,15,15,30" Background="#f9fcff">
+                    <TextBlock x:Name="txtBestanden" Padding="10" TextWrapping="Wrap" LineHeight="2"/>
+                </ScrollViewer>
+            </Grid>
+        </Border>
+    </Grid>
+</Page>

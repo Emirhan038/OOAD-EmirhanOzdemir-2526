@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Kies afbeelding</title>
+   <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+   <h1>Kies afbeelding</h1>
+
+   <p class="target">
+      Doel: een afbeelding kiezen met <code>OpenFileDialog</code> en tonen in een <code>Image</code>-control. Filter op jpg en jpeg.
+   </p>
+   <p>De theorie vind je op <a href="https://rogiervdl.github.io/CS-course/09_bestanden.html#openfiledialog">https://rogiervdl.github.io/CS-course/09_bestanden.html#openfiledialog</a></p>
+
+   <h2>XAML</h2>
+   <ul>
+      <li>
+         Maak een <code>StackPanel</code> met een <code>Button</code>, een <code>Image</code> en een <code>TextBlock</code> control.
+      </li>
+   </ul>
+
+   <h2>Code-behind</h2>
+   <ol>
+      <li>
+         Bij een klik op de button, toon een <code>OpenFileDialog</code> (namespace <code>Microsoft.Win32</code>), met filter op <code>*.jpg;*.jpeg</code>, en de startfolder op <em>Mijn afbeeldingen</em>. 
+      </li>
+      <li>
+         Als de gebruiker op OK klikt, toon de afbeelding in de <code>Image</code> en de bestandsnaam in de <code>TextBlock</code>. 
+      </li>
+      <li>
+         Als de gebruiker het dialoogvenster sluit zonder kiezen, toon je de tekst "kiezen afbeelding geannuleerd".
+      </li>
+
+   </ol>
+   <p>Codefragment om de afbeelding te laden en te tonen:</p>
+   <pre><code>BitmapImage bitmap = new BitmapImage();
+bitmap.BeginInit();
+bitmap.UriSource = new Uri(<em>&lt;filename&gt;</em>, UriKind.Absolute);
+bitmap.EndInit();
+imgAfbeelding.Source = bitmap;</code></pre>
+   <p>
+      Opmerking: voor <code>BitmapImage</code> moet je de <code>System.Windows.Media.Imaging</code> namespace toevoegen.
+   </p>
+   <p>Screenshot:</p>
+   <figure>
+      <img src="img/KiesAfbeelding.png" alt="" width="600">
+   </figure>
+
+</body>
+
+</html>

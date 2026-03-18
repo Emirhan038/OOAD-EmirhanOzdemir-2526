@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Excepties</title>
+   <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+   <h1>Excepties</h1>
+
+   <p class="target">
+      Doel: exception handling toevoegen aan bestaande code.
+   </p>
+   <p>
+      Met applicatie kan je een speciale map te selecteren (<em>Desktop</em>, <em>Mijn Afbeeldingen</em>, <em>Mijn Documenten</em>, <em>Mijn Muziek</em>), 
+      waarna de bestanden in die map getoond worden in een lijst. Als je een bestand selecteert, verschijnt de bestandsinfo.
+   </p>
+   <p>
+      De theorie over exception handling vind je op <a href="https://rogiervdl.github.io/CS-course/09_bestanden.html#exception-handling">https://rogiervdl.github.io/CS-course/09_bestanden.html#exception-handling</a>.
+   </p>
+
+   <h2>Code-behind</h2>
+   <p>
+      Het lezen van mappen met <code><strong>Directory.GetFiles()</strong></code> en het ophalen van bestandsinfo met <code><strong>FileInfo</strong></code> kan verschillende fouten opleveren.
+   </p>
+
+   <ol>
+      <li>
+         Voeg exception handling toe rond <code>Directory.GetFiles()</code>; gebruik minstens <code>UnauthorizedAccessException</code>, <code>DirectoryNotFoundException</code> en <code>IOException</code>.
+      </li>
+      <li>
+         Voeg exception handling toe rond <code>FileInfo</code>; gebruik minstens <code>UnauthorizedAccessException</code>, <code>FileNotFoundException</code> en <code>IOException</code>.
+      </li>
+   </ol>
+
+   <h2>Tips</h2>
+   <ul class="tips">
+      <li>Let goed op alle regels: niet meer code in het try-blok dan nodig</li>
+      <li>Test je oplossing o.a. door een bestand in de lijst te selecteren dat je intussen in Verkenner hebt verwijderd.</li>
+   </ul>
+   <p>Screenshot:</p>
+   <figure>
+      <img src="img/Excepties.png" alt="" width="600">
+   </figure>
+
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<Page x:Class="WpfBestandenOefenblad.Exercises.Excepties"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:WpfBestandenOefenblad.Exercises"
+      mc:Ignorable="d"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Excepties">
+
+    <Grid Background="#eeeeee">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="280"/>
+        </Grid.RowDefinitions>
+        <Frame x:Name="fraAssignment" Grid.Row="0" Grid.Column="0" />
+        <Border Background="White" Grid.Row="1">
+            <!-- XAML VAN DE OEFENING -->
+            <Grid Background="AliceBlue" Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="20"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <ComboBox x:Name="cmbFolders" Margin="10" Padding="5" SelectionChanged="CmbFolders_SelectionChanged">
+                    <ComboBoxItem>Selecteer...</ComboBoxItem>
+                    <ComboBoxItem Tag="Desktop">Desktop</ComboBoxItem>
+                    <ComboBoxItem Tag="MyPictures">Mijn Afbeeldingen</ComboBoxItem>
+                    <ComboBoxItem Tag="MyDocuments">Mijn Documenten</ComboBoxItem>
+                    <ComboBoxItem Tag="MyMusic">Mijn Muziek</ComboBoxItem>
+                </ComboBox>
+                <TextBlock Text="Bestanden" FontSize="16" FontWeight="SemiBold" Grid.Row="1" Grid.Column="0" Margin="10"/>
+                <TextBlock Text="Bestandsinfo" Grid.Row="1" Grid.Column="1" FontSize="16" FontWeight="SemiBold" Margin="10"/>
+
+                <ListBox x:Name="lstBestanden" Grid.Row="2" Grid.Column="0" Margin="10" SelectionChanged="LstBestanden_SelectionChanged"/>
+                <TextBlock x:Name="txtBestandInfo" Grid.Row="2" Grid.Column="1" Padding="10" Background="#f9f9f9" TextWrapping="Wrap" Margin="10" />
+            </Grid>
+        </Border>
+    </Grid>
+</Page>

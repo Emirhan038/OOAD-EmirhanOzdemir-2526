@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Pad builder</title>
+   <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+   <h1>Pad builder</h1>
+
+   <p class="target">
+      Doel: een volledig bestandspad samenstellen uit een speciale map (keuze via radiobuttons), een subpad en een bestandsnaam. Het resultaat wordt gegenereerd met <code>Path.Combine</code> en getoond in een TextBlock.
+   </p>
+   <p>
+      De theorie vind je op <a href="https://rogiervdl.github.io/CS-course/09_bestanden.html#paden">https://rogiervdl.github.io/CS-course/09_bestanden.html#paden</a>
+   </p>
+
+   <h2>XAML</h2>
+   <p>
+      De XAML is gegeven. 
+   </p>
+
+   <h2>Code-behind</h2>
+   <ol>
+      <li>
+         Bij klik op de knop, stel het volledige pad samen met <code>Path.Combine()</code> en toon het onderaan.
+      </li>
+      <li>Normaliseer de gebruikte slashes met <code>.Replace('\\', '/');</code></li>
+   </ol>
+   <p>Screenshot:</p>
+   <figure>
+      <img src="img/PadBuilder.png" alt="" width="600">
+   </figure>
+
+</body>
+
+</html>
