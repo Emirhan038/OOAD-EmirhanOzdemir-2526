@@ -1,3 +1,4 @@
 <Solution>
   <Project Path="WpfBestandenOefenblad startmateriaal/WpfBestandenOefenblad/WpfBestandenOefenblad.csproj" />
+  <Project Path="WpfVcardEditor/WpfVcardEditor.csproj" Id="04823cec-dd57-4122-a5c4-a33be8c58ec1" />
 </Solution>
