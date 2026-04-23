@@ -1,0 +1,16 @@
+pre > code[class*=language-], pre[class*=language-] {
+	text-shadow: none;
+}
+
+:not(pre) > code[class*=language-],
+:not(pre[class*=language-]) > code {
+	background: none;
+}
+.language-css .token.string,
+.style .token.string,
+.token.entity,
+.token.operator,
+.token.url {
+  background: none;
+}
+

@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>OOAD overerving oefenblad</title>
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400&display=swap">
+   <link rel="stylesheet" href="vendor/prism-default.css">
+   <link rel="stylesheet" href="vendor/prism-okaida.css">
+   <link rel="stylesheet" href="css/styles.css">
+   <link rel="stylesheet" href="css/mods.css">
+</head>
+
+<body class="prism language-csharp">
+
+   <header class="page-header" aria-label="Paginakop">
+      <h1>Overerving oefenblad</h1>
+      <p>
+         Dit is een oefenblad bij het hoofdstuk
+         <a href="https://rogiervdl.github.io/CS-course/12_overerving.html">Overerving</a>.
+      </p>
+   </header>
+   <main>
+      <section class="intro box" aria-label="Inleiding">
+         <h2>Hoe los je dit oefenblad op?</h2>
+         <ol>
+            <li>Open de solution van dit oefenblad in <strong>Visual Studio 2026</strong>.</li>
+            <li>Alle oefeningen vind je in de map <em>Exercises</em>.</li>
+            <li>De bijhorende klassen werk je uit in de map <em>Exercises/Classes</em>.</li>
+         </ol>
+         <p>Overzicht van de oefeningen:</p>
+         <ol>
+            <li><a href="#ex1">Eenvoudige overerving</a></li>
+            <li><a href="#ex2">Abstracte klasse</a></li>
+            <li><a href="#ex3">Abstracte property of methode</a></li>
+            <li><a href="#ex4">is en as</a></li>
+            <li><a href="#ex5">base</a></li>
+         </ol>
+      </section>
+
+      <!-- Oefening 1: eenvoudige overerving -->
+      <section class="exercise" id="ex1">
+         <h2>Eenvoudige overerving</h2>
+         <p class="goal">Doel: een klasse overerven van een andere klasse.</p>
+
+         <div class="info box">
+            <h3>Theorie</h3>
+            <p>
+               Met <strong>overerving</strong> kan een klasse de eigenschappen van een andere klasse overnemen. De klasse die overerft heet de <strong>subklasse</strong>, de klasse waarvan overgeërfd wordt de <strong>basisklasse</strong>.
+            </p>
+            <pre class="code-block prism-default" language-csharp><code>// basisklasse Dier
+public class Dier
+{
+    public string Naam { get; set; }
+    public int Leeftijd { get; set; }
+}
+
+// Hond erft Naam en Leeftijd over van Dier
+public class Hond : Dier
+{
+   // eigen properties van Hond
+   public string Ras { get; set; }       
+   public bool IsGetraind { get; set; }
+}</code></pre>
+         <p>Voorbeeld van een <code>Hond</code> instantie:</p>
+            <pre class="code-block"><code>Hond jacky = new Hond {
+   Naam = "Jacky",        // van Dier
+   Leeftijd = 3,          // van Dier
+   Ras = "Schnauzer",     // eigen
+   IsGetraind = true      // eigen
+};</code></pre>
+         </div>
+         <div class="assignment box">
+            <h3>Opdracht</h3>
+            <p>
+               In <em>Exercises/Classes/Klant</em> vind je een klasse <code>Klant</code> met properties <code>Naam</code> en <code>Email</code>.
+            </p>
+            <ol>
+               <li>maak in dezelfde map een klasse <code>ProfessioneleKlant</code> die overerft van <code>Klant</code></li>
+               <li>voeg properties <code>BedrijfsNaam</code> en <code>BtwNummer</code> toe</li>
+               <li>voeg een eigen <code>ToString()</code> implementatie toe (tip: je kan de versie uit de basisklasse oproepen met <code>base.ToString()</code>)</li>
+               <li>
+                  voeg in <em>Ex01Overerving</em> twee instanties toe van <code>ProfessioneleKlant</code>:
+                  <ul>
+                     <li>Niels Verhoeven, niels@studio42.be, Studio 42 BV, BE0123.456.789</li>
+                     <li>Sofia Dimitris, sofia@nova.eu, Atelier Nova, BE0897.654.321</li>
+                  </ul>
+               </li>
+            </ol>
+            <p>Verwacht resultaat:</p>
+            <pre class="prism-okaida language-none"><code>Oefening 1: Overerving
+-------------
+Overzicht klanten:
+- Lotte Peeters (lotte.peeters@mail.be)
+- Youssef El Amrani (youssef.elamrani@outlook.com)
+- Chloé Van den Broeck (chloe.vdbroeck@gmail.com)
+- Milan De Vos (milan.devos@yahoo.com)
+- Niels Verhoeven (niels@studio42.be) - Studio 42 BV (BTW: BE0123.456.789)
+- Sofia Dimitriou (sofia@ateliernova.eu) - Atelier Nova (BTW: BE0897.654.321)</code></pre>
+         </div>
+      </section>
+
+      <!-- Oefening 2: abstracte klasse -->
+      <section class="exercise" id="ex2">
+         <h2>Abstracte klasse</h2>
+         <p class="goal">Doel: klassen maken die moeten overgeërfd worden om te kunnen gebruiken.</p>
+
+         <div class="info box">
+            <h3>Theorie</h3>
+            <p>
+               Een <strong>abstracte klasse</strong> is een klasse die je <em>niet rechtstreeks</em> kan instantiëren. Ze dient enkel als basisklasse voor subklassen. Je markeert ze met het keyword <code>abstract</code>.
+            </p>
+            <pre class="code-block"><code>// Kan niet rechtstreeks aangemaakt worden: new Vorm() → fout!
+public abstract class Vorm
+{
+   public string Kleur { get; set; }
+}</code></pre>
+            <p>Je moet ze overerven om te kunnen gebruiken:</p>
+            <pre class="code-block"><code>// Erf over om te gebruiken
+public class Cirkel : Vorm
+{
+   public double Straal { get; set; }
+}
+public class Rechthoek : Vorm
+{
+   public double Breedte { get; set; }
+   public double Hoogte { get; set; }
+}</code></pre>
+            <p>Gebruik een abstracte klasse wanneer het concept te algemeen is om rechtstreeks te gebruiken (<code>Vorm</code>, <code>Dier</code>, …)</p>
+            <pre class="code-block"><code>Cirkel c1 = new Cirkel { Kleur = "groen", Straal = 13.7 }; // ok
+Rechthoek r1 = new Rechthoek { Kleur = "blauw", Breedte = 210, Hoogte = 133 }; // ok
+Vorm v1 = new Vorm { Kleur = "rood" }; // fout! Vorm mag niet rechtstreeks gebruikt worden
+</code></pre>
+         </div>
+         <div class="assignment box">
+            <h3>Opdracht</h3>
+            <p>
+               In <em>Exercises/Classes/CatalogusItem</em> vind je klassen <code>Boek</code>, <code>EBoek</code> en <code>FilmDvd</code>. De properties <code>Titel</code> en <code>InventarisNummer</code> zijn gemeenschappelijk.
+            </p>
+            <ol>
+               <li>Maak een basisklasse <code>CatalogusItem</code> voor die gemeenschappelijke properties. </li>
+               <li>Laat de andere drie klassen overerven van <code>CatalogusItem</code></li>
+               <li>Markeer <code>CatalogusItem</code> abstract; we gaan <code>CatalogusItem</code> niet rechtstreeks gebruiken.</li>
+               <li>Controleer of het programma <em>Ex02AbstracteKlassen</em> nog steeds werkt</li>
+            </ol>
+            <p>Verwacht resultaat:</p>
+            <pre class="prism-okaida language-none"><code>Oefening 2: eigen basisklasse en afgeleiden
+-------------
+[B-10042] De hemel is altijd paars
+  Boek — Ruta Sepetys, 412 pagina's
+
+[D-08821] Koko
+  DVD — Taika Waititi, 101 min
+
+[E-00003] C# in een notendop
+  E-book — Pdf, 4,2 MB</code></pre>
+         </div>
+      </section>
+
+      <!-- Oefening 3: abstracte property -->
+      <section class="exercise" id="ex3">
+         <h2>Abstracte property of methode</h2>
+         <p class="goal">Doel: methodes maken die moeten geïmplementeerd worden in overgeërfde klassen.</p>
+
+         <div class="info box">
+            <h3>Theorie</h3>
+            <p>
+               Een <strong>abstracte methode of property</strong> heeft geen implementatie in de basisklasse. Elke subklasse is <em>verplicht</em> om ze te implementeren met <code>override</code>.
+            </p>
+            <pre class="code-block"><code>public abstract class Vorm
+{
+   public string Kleur { get; set; }
+
+   // abstracte property: subklasse MOET deze implementeren
+   public abstract double Oppervlakte { get; }
+
+   // abstracte methode: subklasse MOET deze implementeren
+   public abstract void Herschaal(double factor);
+}
+
+public class Cirkel : Vorm
+{
+   public double Straal { get; set; }
+   public override double Oppervlakte { get  { return Math.PI * Straal * Straal; } }
+   public override void Herschaal(double factor)
+   {
+      Straal *= factor;
+   }
+}
+
+public class Rechthoek : Vorm
+{
+   public double Breedte { get; set; }
+   public double Hoogte { get; set; }
+   public override double Oppervlakte { get  { return Breedte * Hoogte; } }
+   public override void Herschaal(double factor)
+   {
+      Breedte *= factor;
+      Hoogte *= factor;
+   }
+}</code></pre>
+            <p>Merk op hoe automatisch de juiste versie van <code>Oppervlakte</code> en <code>Herschaal()</code> geselecteerd wordt:</p>
+            <pre class="code-block"><code>List&lt;Vorm&gt; vormen = new List&lt;Vorm&gt;();
+vormen.Add(new Cirkel { Kleur = "groen", Straal = 13.7 });
+vormen.Add(new Rechthoek { Kleur = "blauw", Breedte = 210, Hoogte = 133 });
+
+foreach (Vorm v in vormen)
+{
+   Console.WriteLine($"oppervlakte: {v.Oppervlakte}"); // compiler kiest automatisch de juiste versie van Oppervlakte
+   v.Herschaal(2); // compiler kiest automatisch de juiste versie van Herschaal()
+   Console.WriteLine($"na herschaling x2: {v.Oppervlakte}");
+}
+</code></pre>
+            <p>Dit noemt men <strong><mark>polymorfisme</mark></strong> ("meerdere vormen"): één methode voor de buitenwereld, intern verschillende implementaties&mdash;een uiterst belangrijk begrip in OO!</p>
+            <p>Gebruik abstract wanneer je subklassen wil <em>verplichten</em> een methode te implementeren.</li>
+         </div>
+         <div class="assignment box">
+            <h3>Opdracht</h3>
+            <p>
+               In <em>Exercises/Classes/Validatie</em> vind je de basisklasse <code>ValidatieRegel</code> en afgeleide klassen <code>BevatHoofdletterRegel</code> en <code>MinLengteRegel</code>.
+            </p>
+            <ol>
+               <li>markeer in <code>ValidatieRegel</code> de klasse zelf, de property en de methode <code>abstract</code> (verwijder ook de standaardwaarde van de property en de body van de methode)</li>
+               <li>markeer in de afgeleiden klassen de property en de methode als <code>override</code> (overschrijft / implementeert methode uit basisklasse)</li>
+               <li>voeg twee nieuwe validatieregels toe: <code>BevatCijferRegel</code> (tip: gebruik <code>IsDigit</code>) en <code>MagNietBevattenRegel</code></li>
+               <li>haal in Ex03AbstracteMembers regel 13 en 14 uit commentaar, en controleer of het programma werkt</li>
+            </ol>
+            <p>Verwacht resultaat:</p>
+            <pre class="prism-okaida language-none"><code>Voer een wachtwoord in: azerty1
+
+<span class="red">✗ Waarde moet minstens 8 tekens bevatten.</span>
+<span class="red">✗ Waarde moet minstens één hoofdletter bevatten.</span>
+<span class="green">✓ BevatCijferRegel geslaagd</span>
+<span class="red">✗ Waarde mag geen van de volgende woorden bevatten: wachtwoord, 1234, Azerty.</span>
+
+
+Voer een wachtwoord in: hamster-kebab
+
+<span class="green">✓ MinLengteRegel geslaagd</span>
+<span class="red">✗ Waarde moet minstens één hoofdletter bevatten.</span>
+<span class="red">✗ Waarde moet minstens één cijfer bevatten.</span>
+<span class="green">✓ MagNietBevattenRegel geslaagd</span>
+
+
+Voer een wachtwoord in: !è12HjK?
+
+<span class="green">✓ MinLengteRegel geslaagd</span>
+<span class="green">✓ BevatHoofdletterRegel geslaagd</span>
+<span class="green">✓ BevatCijferRegel geslaagd</span>
+<span class="green">✓ MagNietBevattenRegel geslaagd</code></pre>
+         </div>
+      </section>
+
+      <!-- Oefening 4: is en as -->
+      <section class="exercise" id="ex4">
+         <h2>is en as</h2>
+         <p class="goal">Doel: het type van een object controleren met <code>is</code> en casten naar een subklasse met <code>as</code>.</p>
+
+         <div class="info box">
+            <h3>Theorie</h3>
+            <p>
+               Met <code>is</code> controleer je of een object van een bepaald type is. Met <code>as</code> cast je naar een subklasse — het resultaat is <code>null</code> als het type niet klopt (geen exception). Codevoorbeeld:
+            </p>
+            <pre class="code-block"><code>// basisklasse
+class Gebruiker {
+   public int Id { get; set; }
+   public string Naam { get; set; }
+}
+
+// afgeleide klassen
+class Medewerker : Gebruiker {
+   public int ToegangsCode { get; set; }
+}
+class Klant : Gebruiker {
+   public string KlantNummer { get; set; }
+}
+
+// maak enkele gebruikers
+List&lt;Gebruiker&gt; gebruikers = new List&lt;Gebruiker&gt;();
+gebruikers.Add(new Medewerker() { Id = 1, Naam = "An Janssen", ToegangsCode = 4872 });
+gebruikers.Add(new Klant() { Id = 2, Naam = "Marc Pieters", KlantNummer = "KL-00123" });
+gebruikers.Add(new Medewerker() { Id = 3, Naam = "Sara Leclercq", ToegangsCode = 9341 });
+gebruikers.Add(new Klant() { Id = 4, Naam = "Jonas De Smet", KlantNummer = "KL-00456" });
+
+// itereer over gebruikers, en parse telkens met "is" en "as"
+foreach (Gebruiker user in gebruikers) {
+   if (user is Medewerker) {
+      Medewerker mw = user as Medewerker;
+      Console.WriteLine($"Medewerker {mw.Naam} heeft toegangscode {mw.ToegangsCode}");
+   }
+   if (g is Klant) {
+      Klant kl = user as Klant;
+      Console.WriteLine($"Klant {kl.Naam} heeft klantnummer {kl.KlantNummer}");
+   }
+}</code></pre>
+            <p>In moderne C# kan je <code>is</code> en <code>as</code> in één stap combineren:</p>
+            <pre class="code-block"><code>// "is" en "as" in één stap gecombineerd
+if (user is Medewerker as mw) {
+   Console.WriteLine($"Medewerker {mw.Naam} heeft toegangscode {mw.ToegangsCode}");
+}
+</code></pre>
+         </div>
+         <div class="assignment box">
+            <h3>Opdracht</h3>
+            <p>
+               In <em>Exercises/Classes/Workout</em> vind je een basisklasse <code>Workout</code> en drie subklassen: <code>Cardio</code>, <code>Krachttraining</code> en <code>Stretching</code>.
+            </p>
+            <ol>
+               <li>Vul de subklassen aan met een readonly property <code>Punten</code>: een stretching levert 10 punten op, een <code>Krachttraining</code> (aantal reps x gewicht) / 5, en <code>Cardio</code> aantal kilometers * 6</li>
+               <li>Haal <code>Workout.ToString() uit commentaar</code></li>
+               <li>Toon info per workout (zie screenshot): overloop alle workouts en splits op met is/as</li>
+               <li>Bereken het aantal punten cardio, krachttraining en stretching en toon het overzicht (zie screenshot)</li>
+            </ol>
+            <p>Verwacht resultaat:</p>
+            <pre class="prism-okaida language-none"><code>Oefening 4: is en as
+-------------
+Overzicht workouts:
+  [Cardio]         Ochtendrun — 5,2 km
+  [Krachttraining] Bench press — 60 kg × 12 reps
+  [Stretching]     Rugstretching — Rug
+  [Cardio]         Fietstocht — 22 km
+  [Krachttraining] Squat — 80 kg × 8 reps
+  [Stretching]     Nekrol — Nek
+
+Totale punten per type:
+  Cardio:         163
+  Krachttraining: 272
+  Stretching:     20</code></pre>
+         </div>
+      </section>
+
+      <!-- Oefening 5: base -->
+      <section class="exercise" id="ex5">
+         <h2>base</h2>
+         <p class="goal">Doel: de constructor en methodes van de basisklasse aanroepen vanuit een subklasse.</p>
+
+         <div class="info box">
+            <h3>Theorie</h3>
+            <p>
+               Met <code>base</code> roep je iets op uit de basisklasse. Er zijn twee gebruiken:
+            </p>
+            <ul>
+               <li><code>base(...)</code> in de constructor — roept de constructor van de basisklasse op</li>
+               <li><code>base.Methode()</code> in een override — roept de implementatie van de basisklasse op</li>
+            </ul>
+            <pre class="code-block"><code>public class Fiets
+{
+   public string Merk { get; set; }
+   public int Versnellingen { get; set; }
+
+   public Fiets(string merk, int versnellingen)
+   {
+      Merk = merk;
+      Versnellingen = versnellingen;
+   }
+
+   public override string ToString() => $"{Merk}, {Versnellingen} versnellingen";
+}
+
+public class ElektrischeFiets : Fiets
+{
+   public int Kwh { get; set; }
+
+   // base(...): roept constructor van Fiets op
+   public ElektrischeFiets(string merk, int versnellingen, int kwh) : base(merk, versnellingen)
+   {
+      Kwh = kwh;
+   }
+
+   // base.ToString(): bouwt verder op de output van Fiets
+   public override string ToString() => $"{base.ToString()}, batterij {Kwh} kWh";
+}</code></pre>
+         </div>
+         <div class="assignment box">
+            <h3>Opdracht</h3>
+            <p>
+               In <em>Exercises/Classes/Personeel</em> vind je een klasse <code>Medewerker</code> (properties <code>Naam</code> en <code>Afdeling</code>, constructor, <code>ToString()</code>).
+            </p>
+            <ol>
+               <li>Maak een klasse <code>Manager</code> die overerft van <code>Medewerker</code> en een extra property <code>TeamGrootte</code> heeft</li>
+               <li>Voeg een constructor toe die <code>base(naam, afdeling)</code> aanroept</li>
+               <li>Override <code>ToString()</code> en roep <code>base.ToString()</code> aan om de output van <code>Medewerker</code> te hergebruiken</li>
+               <li>Controleer of de output van Ex05Base klopt met onderstaande screenshot (haal het stuk uit commentaar)</li>
+            </ol>
+            <p>Verwacht resultaat:</p>
+            <pre class="prism-okaida language-none"><code>Oefening 5: base
+-------------
+Lotte Peeters (Marketing)
+Niels Verhoeven (IT), team: 8 personen
+Youssef El Amrani (Sales)
+Sofia Dimitriou (HR), team: 5 personen
+Chloé Van den Broeck (Finance)</code></pre>
+         </div>
+      </section>
+
+
+   </main>
+
+   <footer class="page-footer" aria-label="Pagina-voetnoot">
+      <p>OOAD Overerving oefenblad.</p>
+   </footer>
+
+   <script src="vendor/prism.js"></script>
+</body>
+
+</html>
