@@ -1,0 +1,12 @@
+<Page x:Class="PatientApp.AfsprakenPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Afspraken">
+
+    <StackPanel Margin="40,40,40,20">
+        <TextBlock x:Name="TxtTitel" FontSize="22" FontWeight="Bold"
+                   Foreground="#1E8449" Margin="0,0,0,16" TextWrapping="Wrap"/>
+        <TextBlock Text="De afsprakenpagina wordt in een volgende stap uitgewerkt."
+                   FontSize="14" Foreground="#7F8C8D"/>
+    </StackPanel>
+</Page>

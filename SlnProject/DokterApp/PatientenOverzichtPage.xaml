@@ -1,0 +1,57 @@
+<Page x:Class="DokterApp.PatientenOverzichtPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Patiënten – Overzicht">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Koptekst -->
+        <StackPanel Grid.Row="0" Margin="32,24,32,12">
+            <TextBlock Text="Patiënten" FontSize="22" FontWeight="Bold"
+                       Foreground="#2C3E50" Margin="0,0,0,14"/>
+
+            <!-- Zoekbalk -->
+            <StackPanel Orientation="Horizontal">
+                <TextBox x:Name="TxtZoeken" Width="280" FontSize="14"
+                         Padding="8,6" BorderBrush="#BDC3C7" BorderThickness="1"
+                         VerticalContentAlignment="Center"/>
+                <Button x:Name="BtnZoeken" Content="Zoeken"
+                        Click="BtnZoeken_Click"
+                        Margin="8,0,0,0" Padding="16,7"
+                        Background="#2980B9" Foreground="White"
+                        BorderThickness="0" FontSize="14" Cursor="Hand"/>
+                <Button x:Name="BtnNieuwPatient" Content="+ Nieuwe patiënt"
+                        Click="BtnNieuwPatient_Click"
+                        Margin="12,0,0,0" Padding="16,7"
+                        Background="#27AE60" Foreground="White"
+                        BorderThickness="0" FontSize="14" Cursor="Hand"/>
+            </StackPanel>
+        </StackPanel>
+
+        <!-- Foutmelding — alleen zichtbaar bij een probleem -->
+        <TextBlock x:Name="TxtFout" Grid.Row="1"
+                   Foreground="#C0392B" FontSize="13" TextWrapping="Wrap"
+                   Margin="32,0,32,8" Visibility="Collapsed"/>
+
+        <!-- Statuslabel: hoeveel resultaten -->
+        <TextBlock x:Name="TxtAantal" Grid.Row="2"
+                   FontSize="13" Foreground="#566573"
+                   Margin="32,0,32,10"/>
+
+        <!--
+            WrapPanel voor de patiëntenkaarten — de enige container voor kaarten in XAML.
+            De kaarten zelf worden volledig in code-behind aangemaakt (foreach over List<Patient>).
+        -->
+        <ScrollViewer Grid.Row="3" VerticalScrollBarVisibility="Auto">
+            <WrapPanel x:Name="PanelKaarten"
+                       Orientation="Horizontal"
+                       Margin="24,0,24,24"/>
+        </ScrollViewer>
+    </Grid>
+</Page>

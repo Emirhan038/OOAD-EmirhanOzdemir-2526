@@ -1,0 +1,70 @@
+<Page x:Class="DokterApp.AfsprakenPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Afspraken">
+
+    <Grid Margin="40,24,40,24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Paginatitel: naam van de ingelogde arts -->
+        <TextBlock x:Name="TxtTitel" Grid.Row="0"
+                   FontSize="22" FontWeight="Bold" Foreground="#2C3E50"
+                   Margin="0,0,0,12" TextWrapping="Wrap"/>
+
+        <!-- Foutmelding — alleen zichtbaar bij een probleem -->
+        <TextBlock x:Name="TxtFout" Grid.Row="1"
+                   Foreground="#C0392B" FontSize="13" TextWrapping="Wrap"
+                   Margin="0,0,0,8" Visibility="Collapsed"/>
+
+        <!-- Tweekoloms indeling: kalender links, lijst rechts -->
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Kalender voor datumselectie -->
+            <StackPanel Grid.Column="0" Margin="0,0,28,0">
+                <TextBlock Text="Selecteer een datum:" FontSize="13"
+                           Foreground="#566573" Margin="0,0,0,6"/>
+                <Calendar x:Name="KalenderAfspraken"
+                          SelectionMode="SingleDate"
+                          SelectedDatesChanged="KalenderAfspraken_SelectedDatesChanged"/>
+            </StackPanel>
+
+            <!-- Lijst van afspraken voor de geselecteerde dag -->
+            <StackPanel Grid.Column="1">
+                <TextBlock x:Name="TxtDatumLabel"
+                           Text="Kies een datum om afspraken te zien."
+                           FontSize="13" Foreground="#566573" Margin="0,0,0,6"/>
+                <ListBox x:Name="LstAfspraken"
+                         MinHeight="180" MaxHeight="300"
+                         FontSize="14" Padding="4"
+                         SelectionChanged="LstAfspraken_SelectionChanged"/>
+            </StackPanel>
+        </Grid>
+
+        <!-- Reden van consultatie — zichtbaar zodra een afspraak geselecteerd is -->
+        <Border x:Name="BorderReden" Grid.Row="3"
+                Background="#EBF5FB" CornerRadius="5"
+                Padding="14,10" Margin="0,14,0,10"
+                Visibility="Collapsed">
+            <TextBlock x:Name="TxtReden" FontSize="14" Foreground="#2C3E50"
+                       TextWrapping="Wrap"/>
+        </Border>
+
+        <!-- Annuleer-knop — uitgeschakeld zolang er geen afspraak geselecteerd is -->
+        <Button x:Name="BtnAnnuleren" Grid.Row="4"
+                Content="Annuleren" Click="BtnAnnuleren_Click"
+                HorizontalAlignment="Left" Padding="18,9"
+                Background="#E74C3C" Foreground="White"
+                BorderThickness="0" FontSize="14" Cursor="Hand"
+                IsEnabled="False"/>
+    </Grid>
+</Page>

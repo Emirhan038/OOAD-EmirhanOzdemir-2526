@@ -1,0 +1,56 @@
+<Page x:Class="PatientApp.StartPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Start">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="48,48,48,32" MaxWidth="680" HorizontalAlignment="Left">
+
+            <TextBlock Text="Welkom bij het Patiëntenportaal"
+                       FontSize="26" FontWeight="Bold" Foreground="#1E8449"
+                       Margin="0,0,0,16" TextWrapping="Wrap"/>
+
+            <TextBlock FontSize="14" Foreground="#566573" LineHeight="26"
+                       TextWrapping="Wrap" Margin="0,0,0,24">
+                Via dit portaal kunt u uw afspraken bij de dokterspraktijk bekijken
+                en uw persoonlijke gegevens beheren.
+                Log in met uw patiëntaccount om aan de slag te gaan.
+            </TextBlock>
+
+            <!-- Functionaliteitsoverzicht -->
+            <TextBlock Text="Wat kunt u doen?" FontSize="16" FontWeight="SemiBold"
+                       Foreground="#1E8449" Margin="0,0,0,12"/>
+
+            <Border Background="#EAFAF1" CornerRadius="6" Padding="20,16" Margin="0,0,0,10">
+                <StackPanel>
+                    <TextBlock Text="Afspraken" FontSize="14" FontWeight="Bold"
+                               Foreground="#1E8449" Margin="0,0,0,4"/>
+                    <TextBlock FontSize="13" Foreground="#566573" TextWrapping="Wrap"
+                               LineHeight="22">
+                        Bekijk uw geplande en vorige afspraken. U kunt afspraken
+                        ook annuleren indien nodig.
+                    </TextBlock>
+                </StackPanel>
+            </Border>
+
+            <Border Background="#EBF5FB" CornerRadius="6" Padding="20,16" Margin="0,0,0,24">
+                <StackPanel>
+                    <TextBlock Text="Profiel" FontSize="14" FontWeight="Bold"
+                               Foreground="#2980B9" Margin="0,0,0,4"/>
+                    <TextBlock FontSize="13" Foreground="#566573" TextWrapping="Wrap"
+                               LineHeight="22">
+                        Bekijk en bewerk uw persoonlijke gegevens zoals naam,
+                        contactgegevens, notificatievoorkeuren en profielfoto.
+                    </TextBlock>
+                </StackPanel>
+            </Border>
+
+            <!-- Instructie -->
+            <TextBlock FontSize="14" Foreground="#566573" TextWrapping="Wrap" LineHeight="24">
+                Klik op <Bold>Inloggen</Bold> in het linkermenu om te beginnen.
+                Gebruik uw e-mailadres en wachtwoord om toegang te krijgen.
+            </TextBlock>
+
+        </StackPanel>
+    </ScrollViewer>
+</Page>

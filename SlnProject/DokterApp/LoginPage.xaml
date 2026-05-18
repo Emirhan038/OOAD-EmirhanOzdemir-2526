@@ -1,0 +1,49 @@
+<Page x:Class="DokterApp.LoginPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Inloggen">
+
+    <Grid Background="#F0F3F4">
+        <!-- Gecentreerde inlogkaart -->
+        <Border HorizontalAlignment="Center" VerticalAlignment="Center"
+                Width="400" Background="White"
+                BorderBrush="#D5D8DC" BorderThickness="1" Padding="40,36">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="16" ShadowDepth="2" Opacity="0.12"/>
+            </Border.Effect>
+
+            <StackPanel>
+                <!-- Titel -->
+                <TextBlock Text="Inloggen als arts" FontSize="22" FontWeight="Bold"
+                           Foreground="#2C3E50" HorizontalAlignment="Center"
+                           Margin="0,0,0,28"/>
+
+                <!-- E-mailadres -->
+                <TextBlock Text="E-mailadres" FontSize="13" Foreground="#7F8C8D"
+                           Margin="0,0,0,4"/>
+                <TextBox x:Name="TxtEmail" FontSize="14" Padding="10,7"
+                         BorderBrush="#BDC3C7" BorderThickness="1"
+                         Margin="0,0,0,18"/>
+
+                <!-- Wachtwoord -->
+                <TextBlock Text="Wachtwoord" FontSize="13" Foreground="#7F8C8D"
+                           Margin="0,0,0,4"/>
+                <PasswordBox x:Name="PbxWachtwoord" FontSize="14" Padding="10,7"
+                             BorderBrush="#BDC3C7" BorderThickness="1"
+                             Margin="0,0,0,20"/>
+
+                <!-- Foutmelding — alleen zichtbaar wanneer er een probleem is -->
+                <TextBlock x:Name="TxtFout" Foreground="#C0392B" FontSize="13"
+                           TextWrapping="Wrap" Margin="0,0,0,14"
+                           Visibility="Collapsed"/>
+
+                <!-- Inlogknop -->
+                <Button x:Name="BtnInloggen" Content="Inloggen"
+                        Click="BtnInloggen_Click"
+                        FontSize="14" Padding="0,11"
+                        Background="#2980B9" Foreground="White"
+                        BorderThickness="0" Cursor="Hand"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Page>
