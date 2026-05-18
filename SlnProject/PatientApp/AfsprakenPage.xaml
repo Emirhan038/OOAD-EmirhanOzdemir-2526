@@ -3,10 +3,149 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       Title="Afspraken">
 
-    <StackPanel Margin="40,40,40,20">
-        <TextBlock x:Name="TxtTitel" FontSize="22" FontWeight="Bold"
-                   Foreground="#1E8449" Margin="0,0,0,16" TextWrapping="Wrap"/>
-        <TextBlock Text="De afsprakenpagina wordt in een volgende stap uitgewerkt."
-                   FontSize="14" Foreground="#7F8C8D"/>
-    </StackPanel>
+    <Grid>
+
+        <!-- ═══ OVERZICHT-PANEEL ═══════════════════════════════════════════════ -->
+        <ScrollViewer x:Name="PanelOverzicht" VerticalScrollBarVisibility="Auto">
+            <StackPanel Margin="40,32,40,20">
+
+                <TextBlock Text="Mijn afspraken" FontSize="22" FontWeight="Bold"
+                           Foreground="#1E8449" Margin="0,0,0,20"/>
+
+                <!-- Filteropties -->
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,12">
+                    <RadioButton x:Name="RbAlle"
+                                 Content="Alle afspraken"
+                                 IsChecked="True"
+                                 GroupName="AfspraakFilter"
+                                 Checked="RbFilter_Checked"
+                                 FontSize="13" Margin="0,0,24,0"/>
+                    <RadioButton x:Name="RbToekomstige"
+                                 Content="Enkel toekomstige afspraken"
+                                 GroupName="AfspraakFilter"
+                                 Checked="RbFilter_Checked"
+                                 FontSize="13"/>
+                </StackPanel>
+
+                <!-- Afsprakenlijst -->
+                <ListBox x:Name="LstAfspraken"
+                         Height="200"
+                         FontSize="13"
+                         Margin="0,0,0,16"
+                         SelectionChanged="LstAfspraken_SelectionChanged"/>
+
+                <!-- Reden van de geselecteerde afspraak -->
+                <TextBlock Text="Reden van de afspraak:"
+                           FontWeight="SemiBold" FontSize="13"
+                           Margin="0,0,0,4"/>
+                <Border Background="#F4F6F7" BorderBrush="#D5D8DC"
+                        BorderThickness="1" CornerRadius="4"
+                        MinHeight="48" Margin="0,0,0,20" Padding="10,8">
+                    <TextBlock x:Name="TxtKlacht" FontSize="13"
+                               Foreground="#2C3E50" TextWrapping="Wrap"/>
+                </Border>
+
+                <!-- Actieknoppen -->
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,12">
+                    <Button x:Name="BtnAnnuleren"
+                            Content="Annuleren"
+                            IsEnabled="False"
+                            Click="BtnAnnuleren_Click"
+                            Padding="18,8" Margin="0,0,12,0"
+                            Background="#E74C3C" Foreground="White"
+                            BorderThickness="0" Cursor="Hand" FontSize="13"/>
+                    <Button x:Name="BtnNieuweAfspraak"
+                            Content="+ Nieuwe afspraak"
+                            Click="BtnNieuweAfspraak_Click"
+                            Padding="18,8"
+                            Background="#1E8449" Foreground="White"
+                            BorderThickness="0" Cursor="Hand" FontSize="13"/>
+                </StackPanel>
+
+                <!-- Foutmelding overzicht -->
+                <TextBlock x:Name="TxtFout" Foreground="#C0392B"
+                           FontSize="13" TextWrapping="Wrap"/>
+
+            </StackPanel>
+        </ScrollViewer>
+
+        <!-- ═══ NIEUWE-AFSPRAAK-PANEEL ══════════════════════════════════════════ -->
+        <ScrollViewer x:Name="PanelNieuweAfspraak"
+                      Visibility="Collapsed"
+                      VerticalScrollBarVisibility="Auto">
+            <StackPanel Margin="40,32,40,20">
+
+                <TextBlock Text="Nieuwe afspraak plannen" FontSize="22" FontWeight="Bold"
+                           Foreground="#1E8449" Margin="0,0,0,20"/>
+
+                <!-- Stap 1: kies een dokter -->
+                <TextBlock Text="Kies een dokter:" FontWeight="SemiBold"
+                           FontSize="13" Margin="0,0,0,6"/>
+                <ListBox x:Name="LstDokters"
+                         Height="140" FontSize="13"
+                         Margin="0,0,0,12"
+                         SelectionChanged="LstDokters_SelectionChanged"/>
+
+                <!-- Doktersinfo -->
+                <Border x:Name="PanelDokterInfo"
+                        Visibility="Collapsed"
+                        Background="#EAF4F1" BorderBrush="#A9DFBF"
+                        BorderThickness="1" CornerRadius="4"
+                        Padding="12,10" Margin="0,0,0,16">
+                    <StackPanel>
+                        <TextBlock x:Name="TxtDokterNaam"   FontSize="13" FontWeight="SemiBold" Margin="0,0,0,4"/>
+                        <TextBlock x:Name="TxtDokterEmail"  FontSize="12" Foreground="#566573" Margin="0,0,0,2"/>
+                        <TextBlock x:Name="TxtDokterGsm"    FontSize="12" Foreground="#566573" Margin="0,0,0,2"/>
+                        <TextBlock x:Name="TxtDokterRiziv"  FontSize="12" Foreground="#566573" Margin="0,0,0,2"/>
+                        <TextBlock x:Name="TxtDokterConv"   FontSize="12" Foreground="#566573"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- Stap 2: kies datum -->
+                <TextBlock Text="Kies een datum:" FontWeight="SemiBold"
+                           FontSize="13" Margin="0,0,0,6"/>
+                <Calendar x:Name="CalDatum"
+                          Margin="0,0,0,16"
+                          SelectedDatesChanged="CalDatum_SelectedDatesChanged"/>
+
+                <!-- Stap 3: kies tijdstip -->
+                <TextBlock Text="Kies een tijdstip:" FontWeight="SemiBold"
+                           FontSize="13" Margin="0,0,0,6"/>
+                <ComboBox x:Name="CmbTijd"
+                          Width="160" HorizontalAlignment="Left"
+                          FontSize="13" Margin="0,0,0,16"/>
+
+                <!-- Stap 4: reden -->
+                <TextBlock Text="Reden / klacht:" FontWeight="SemiBold"
+                           FontSize="13" Margin="0,0,0,6"/>
+                <TextBox x:Name="TxtReden"
+                         Height="72" FontSize="13"
+                         TextWrapping="Wrap" AcceptsReturn="True"
+                         VerticalScrollBarVisibility="Auto"
+                         Margin="0,0,0,20"/>
+
+                <!-- Foutmelding nieuwe afspraak -->
+                <TextBlock x:Name="TxtFoutNieuw" Foreground="#C0392B"
+                           FontSize="13" TextWrapping="Wrap" Margin="0,0,0,12"/>
+
+                <!-- Actieknoppen -->
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="BtnBevestigen"
+                            Content="Bevestigen"
+                            Click="BtnBevestigen_Click"
+                            Padding="18,8" Margin="0,0,12,0"
+                            Background="#1E8449" Foreground="White"
+                            BorderThickness="0" Cursor="Hand" FontSize="13"/>
+                    <Button x:Name="BtnTerug"
+                            Content="Terug naar overzicht"
+                            Click="BtnTerug_Click"
+                            Padding="18,8"
+                            Background="#7F8C8D" Foreground="White"
+                            BorderThickness="0" Cursor="Hand" FontSize="13"/>
+                </StackPanel>
+
+            </StackPanel>
+        </ScrollViewer>
+
+    </Grid>
 </Page>

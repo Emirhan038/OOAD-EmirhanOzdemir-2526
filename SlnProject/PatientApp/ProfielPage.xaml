@@ -3,10 +3,215 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       Title="Profiel">
 
-    <StackPanel Margin="40,40,40,20">
-        <TextBlock x:Name="TxtTitel" FontSize="22" FontWeight="Bold"
-                   Foreground="#1E8449" Margin="0,0,0,16" TextWrapping="Wrap"/>
-        <TextBlock Text="De profielpagina wordt in een volgende stap uitgewerkt."
-                   FontSize="14" Foreground="#7F8C8D"/>
-    </StackPanel>
+    <Grid>
+
+        <!-- ═══ BEKIJKEN-PANEEL ═════════════════════════════════════════════════ -->
+        <ScrollViewer x:Name="PanelBekijken" VerticalScrollBarVisibility="Auto">
+            <StackPanel Margin="40,32,40,20">
+
+                <TextBlock Text="Mijn profiel" FontSize="22" FontWeight="Bold"
+                           Foreground="#1E8449" Margin="0,0,0,24"/>
+
+                <!-- Foto + naam naast elkaar -->
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,24">
+
+                    <!-- Profielfoto / placeholder -->
+                    <Border x:Name="BorderFotoPlaceholderBekijk"
+                            Width="90" Height="90" CornerRadius="45"
+                            Background="#AEB6BF" Margin="0,0,20,0">
+                        <TextBlock Text="?" Foreground="White" FontSize="36"
+                                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <Image x:Name="ImgFotoBekijk"
+                           Width="90" Height="90"
+                           Stretch="UniformToFill"
+                           Visibility="Collapsed" Margin="0,0,20,0">
+                        <Image.Clip>
+                            <EllipseGeometry Center="45,45" RadiusX="45" RadiusY="45"/>
+                        </Image.Clip>
+                    </Image>
+
+                    <!-- Naam + geslacht -->
+                    <StackPanel VerticalAlignment="Center">
+                        <TextBlock x:Name="TxtVolledigeNaam"
+                                   FontSize="20" FontWeight="Bold"
+                                   Foreground="#1E8449" Margin="0,0,0,4"/>
+                        <TextBlock x:Name="TxtGeslachtBekijk"
+                                   FontSize="13" Foreground="#7F8C8D"/>
+                    </StackPanel>
+                </StackPanel>
+
+                <!-- Detailgegevens in een rasteropmaak -->
+                <Grid Margin="0,0,0,8">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="160"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Geboortedatum:"
+                               FontWeight="SemiBold" FontSize="13" Margin="0,0,0,10"/>
+                    <TextBlock x:Name="TxtGeboortedatumBekijk"
+                               Grid.Row="0" Grid.Column="1"
+                               FontSize="13" Foreground="#2C3E50" Margin="0,0,0,10"/>
+
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="E-mailadres:"
+                               FontWeight="SemiBold" FontSize="13" Margin="0,0,0,10"/>
+                    <TextBlock x:Name="TxtEmailBekijk"
+                               Grid.Row="1" Grid.Column="1"
+                               FontSize="13" Foreground="#2C3E50" Margin="0,0,0,10"/>
+
+                    <TextBlock Grid.Row="2" Grid.Column="0" Text="GSM:"
+                               FontWeight="SemiBold" FontSize="13" Margin="0,0,0,10"/>
+                    <TextBlock x:Name="TxtGsmBekijk"
+                               Grid.Row="2" Grid.Column="1"
+                               FontSize="13" Foreground="#2C3E50" Margin="0,0,0,10"/>
+
+                    <TextBlock Grid.Row="3" Grid.Column="0" Text="Notificaties:"
+                               FontWeight="SemiBold" FontSize="13" Margin="0,0,0,10"/>
+                    <TextBlock x:Name="TxtNotificatiesBekijk"
+                               Grid.Row="3" Grid.Column="1"
+                               FontSize="13" Foreground="#2C3E50" Margin="0,0,0,10"/>
+                </Grid>
+
+                <!-- Bewerken-knop -->
+                <Button x:Name="BtnBewerken"
+                        Content="Profiel bewerken"
+                        Click="BtnBewerken_Click"
+                        Padding="18,8" Margin="0,8,0,0"
+                        HorizontalAlignment="Left"
+                        Background="#1E8449" Foreground="White"
+                        BorderThickness="0" Cursor="Hand" FontSize="13"/>
+
+                <!-- Foutmelding bekijken -->
+                <TextBlock x:Name="TxtFoutBekijk" Foreground="#C0392B"
+                           FontSize="13" TextWrapping="Wrap" Margin="0,12,0,0"/>
+
+            </StackPanel>
+        </ScrollViewer>
+
+        <!-- ═══ BEWERKEN-PANEEL ══════════════════════════════════════════════════ -->
+        <ScrollViewer x:Name="PanelBewerken"
+                      Visibility="Collapsed"
+                      VerticalScrollBarVisibility="Auto">
+            <StackPanel Margin="40,32,40,20">
+
+                <TextBlock Text="Profiel bewerken" FontSize="22" FontWeight="Bold"
+                           Foreground="#1E8449" Margin="0,0,0,24"/>
+
+                <!-- Profielfoto wijzigen -->
+                <TextBlock Text="Profielfoto:" FontWeight="SemiBold"
+                           FontSize="13" Margin="0,0,0,6"/>
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,4">
+                    <Border x:Name="BorderFotoPlaceholderBew"
+                            Width="72" Height="72" CornerRadius="36"
+                            Background="#AEB6BF" Margin="0,0,14,0">
+                        <TextBlock Text="?" Foreground="White" FontSize="28"
+                                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <Image x:Name="ImgFotoBew"
+                           Width="72" Height="72"
+                           Stretch="UniformToFill"
+                           Visibility="Collapsed" Margin="0,0,14,0">
+                        <Image.Clip>
+                            <EllipseGeometry Center="36,36" RadiusX="36" RadiusY="36"/>
+                        </Image.Clip>
+                    </Image>
+                    <Button x:Name="BtnFotoKiezen"
+                            Content="Foto kiezen..."
+                            Click="BtnFotoKiezen_Click"
+                            Padding="14,8" VerticalAlignment="Center"
+                            Background="#5D6D7E" Foreground="White"
+                            BorderThickness="0" Cursor="Hand" FontSize="13"/>
+                </StackPanel>
+                <TextBlock x:Name="TxtFotoNaam" FontSize="11"
+                           Foreground="#7F8C8D" Margin="0,2,0,16"/>
+
+                <!-- Voornaam -->
+                <TextBlock Text="Voornaam:" FontWeight="SemiBold"
+                           FontSize="13" Margin="0,0,0,4"/>
+                <TextBox x:Name="TxtVoornaam" FontSize="13"
+                         MaxLength="50" Margin="0,0,0,12" Padding="6,4"/>
+
+                <!-- Achternaam -->
+                <TextBlock Text="Achternaam:" FontWeight="SemiBold"
+                           FontSize="13" Margin="0,0,0,4"/>
+                <TextBox x:Name="TxtAchternaam" FontSize="13"
+                         MaxLength="50" Margin="0,0,0,12" Padding="6,4"/>
+
+                <!-- Geslacht via RadioButtons -->
+                <TextBlock Text="Geslacht:" FontWeight="SemiBold"
+                           FontSize="13" Margin="0,0,0,6"/>
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,12">
+                    <RadioButton x:Name="RbOnbekend"
+                                 Content="Onbekend"
+                                 GroupName="Geslacht" FontSize="13"
+                                 Margin="0,0,16,0"/>
+                    <RadioButton x:Name="RbMan"
+                                 Content="Man"
+                                 GroupName="Geslacht" FontSize="13"
+                                 Margin="0,0,16,0"/>
+                    <RadioButton x:Name="RbVrouw"
+                                 Content="Vrouw"
+                                 GroupName="Geslacht" FontSize="13"
+                                 Margin="0,0,16,0"/>
+                    <RadioButton x:Name="RbNietVanToepassing"
+                                 Content="Niet van toepassing"
+                                 GroupName="Geslacht" FontSize="13"/>
+                </StackPanel>
+
+                <!-- Geboortedatum -->
+                <TextBlock Text="Geboortedatum:" FontWeight="SemiBold"
+                           FontSize="13" Margin="0,0,0,6"/>
+                <Calendar x:Name="CalGeboortedatum" Margin="0,0,0,16"/>
+
+                <!-- E-mail -->
+                <TextBlock Text="E-mailadres:" FontWeight="SemiBold"
+                           FontSize="13" Margin="0,0,0,4"/>
+                <TextBox x:Name="TxtEmailBew" FontSize="13"
+                         MaxLength="100" Margin="0,0,0,12" Padding="6,4"/>
+
+                <!-- GSM -->
+                <TextBlock Text="GSM:" FontWeight="SemiBold"
+                           FontSize="13" Margin="0,0,0,4"/>
+                <TextBox x:Name="TxtGsmBew" FontSize="13"
+                         MaxLength="10" Margin="0,0,0,12" Padding="6,4"/>
+
+                <!-- Notificatievoorkeur -->
+                <TextBlock Text="Notificatievoorkeur:" FontWeight="SemiBold"
+                           FontSize="13" Margin="0,0,0,6"/>
+                <ComboBox x:Name="CmbNotificaties"
+                          Width="200" HorizontalAlignment="Left"
+                          FontSize="13" Margin="0,0,0,20"/>
+
+                <!-- Foutmelding bewerken -->
+                <TextBlock x:Name="TxtFoutBew" Foreground="#C0392B"
+                           FontSize="13" TextWrapping="Wrap" Margin="0,0,0,12"/>
+
+                <!-- Actieknoppen -->
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="BtnOpslaan"
+                            Content="Opslaan"
+                            Click="BtnOpslaan_Click"
+                            Padding="18,8" Margin="0,0,12,0"
+                            Background="#1E8449" Foreground="White"
+                            BorderThickness="0" Cursor="Hand" FontSize="13"/>
+                    <Button x:Name="BtnAnnulerenBew"
+                            Content="Annuleren"
+                            Click="BtnAnnulerenBew_Click"
+                            Padding="18,8"
+                            Background="#7F8C8D" Foreground="White"
+                            BorderThickness="0" Cursor="Hand" FontSize="13"/>
+                </StackPanel>
+
+            </StackPanel>
+        </ScrollViewer>
+
+    </Grid>
 </Page>

@@ -78,6 +78,44 @@ public partial class MainWindow : Window
         ToonPagina(new AfsprakenPage(_ingelogdePatient));
     }
 
+    // ── Topbalk verversen (aangeroepen door ProfielPage na opslaan) ────────────
+
+    /// <summary>
+    /// Werkt de naam en profielfoto in de topbalk bij na een profielwijziging.
+    /// </summary>
+    public void RefreshTopbar(Patient patient)
+    {
+        _ingelogdePatient = patient;
+        TxtGebruikerNaam.Text = patient.Voornaam + " " + patient.Achternaam;
+
+        if (patient.Profielfotodata != null && patient.Profielfotodata.Length > 0)
+        {
+            try
+            {
+                BitmapImage bitmap = new BitmapImage();
+                MemoryStream ms    = new MemoryStream(patient.Profielfotodata);
+                bitmap.BeginInit();
+                bitmap.StreamSource = ms;
+                bitmap.CacheOption  = BitmapCacheOption.OnLoad;
+                bitmap.EndInit();
+
+                ImgProfiel.Source            = bitmap;
+                ImgProfiel.Visibility        = Visibility.Visible;
+                BorderPlaceholder.Visibility = Visibility.Collapsed;
+            }
+            catch (Exception)
+            {
+                ImgProfiel.Visibility        = Visibility.Collapsed;
+                BorderPlaceholder.Visibility = Visibility.Visible;
+            }
+        }
+        else
+        {
+            ImgProfiel.Visibility        = Visibility.Collapsed;
+            BorderPlaceholder.Visibility = Visibility.Visible;
+        }
+    }
+
     // ── Menuknophandelaars ─────────────────────────────────────────────────────
 
     /// <summary>Toont de startpagina.</summary>
