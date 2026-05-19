@@ -10,7 +10,7 @@
                        FontSize="26" FontWeight="Bold" Foreground="#1E8449"
                        Margin="0,0,0,16" TextWrapping="Wrap"/>
 
-            <TextBlock FontSize="14" Foreground="#566573" LineHeight="26"
+            <TextBlock FontSize="14" Foreground="#3D4D5C" LineHeight="26"
                        TextWrapping="Wrap" Margin="0,0,0,24">
                 Via dit portaal kunt u uw afspraken bij de dokterspraktijk bekijken
                 en uw persoonlijke gegevens beheren.
@@ -25,7 +25,7 @@
                 <StackPanel>
                     <TextBlock Text="Afspraken" FontSize="14" FontWeight="Bold"
                                Foreground="#1E8449" Margin="0,0,0,4"/>
-                    <TextBlock FontSize="13" Foreground="#566573" TextWrapping="Wrap"
+                    <TextBlock FontSize="13" Foreground="#3D4D5C" TextWrapping="Wrap"
                                LineHeight="22">
                         Bekijk uw geplande en vorige afspraken. U kunt afspraken
                         ook annuleren indien nodig.
@@ -37,7 +37,7 @@
                 <StackPanel>
                     <TextBlock Text="Profiel" FontSize="14" FontWeight="Bold"
                                Foreground="#2980B9" Margin="0,0,0,4"/>
-                    <TextBlock FontSize="13" Foreground="#566573" TextWrapping="Wrap"
+                    <TextBlock FontSize="13" Foreground="#3D4D5C" TextWrapping="Wrap"
                                LineHeight="22">
                         Bekijk en bewerk uw persoonlijke gegevens zoals naam,
                         contactgegevens, notificatievoorkeuren en profielfoto.
@@ -46,7 +46,7 @@
             </Border>
 
             <!-- Instructie -->
-            <TextBlock FontSize="14" Foreground="#566573" TextWrapping="Wrap" LineHeight="24">
+            <TextBlock FontSize="14" Foreground="#3D4D5C" TextWrapping="Wrap" LineHeight="24">
                 Klik op <Bold>Inloggen</Bold> in het linkermenu om te beginnen.
                 Gebruik uw e-mailadres en wachtwoord om toegang te krijgen.
             </TextBlock>

@@ -27,7 +27,7 @@
                                 <Setter TargetName="Brd" Property="Background" Value="#1A6B5A"/>
                             </Trigger>
                             <Trigger Property="IsEnabled" Value="False">
-                                <Setter Property="Foreground" Value="#566573"/>
+                                <Setter Property="Foreground" Value="#8DAFA0"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
@@ -83,7 +83,7 @@
 
                     <TextBlock x:Name="TxtGebruikerNaam" Text="niet ingelogd"
                                VerticalAlignment="Center" Margin="0,0,12,0"
-                               FontSize="14" Foreground="#1E8449"/>
+                               FontSize="14" Foreground="#155C33"/>
 
                     <!-- Placeholder: grijs rondje met vraagteken -->
                     <Border x:Name="BorderPlaceholder" Width="44" Height="44"

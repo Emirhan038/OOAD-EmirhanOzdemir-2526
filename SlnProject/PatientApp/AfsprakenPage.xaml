@@ -94,10 +94,10 @@
                         Padding="12,10" Margin="0,0,0,16">
                     <StackPanel>
                         <TextBlock x:Name="TxtDokterNaam"   FontSize="13" FontWeight="SemiBold" Margin="0,0,0,4"/>
-                        <TextBlock x:Name="TxtDokterEmail"  FontSize="12" Foreground="#566573" Margin="0,0,0,2"/>
-                        <TextBlock x:Name="TxtDokterGsm"    FontSize="12" Foreground="#566573" Margin="0,0,0,2"/>
-                        <TextBlock x:Name="TxtDokterRiziv"  FontSize="12" Foreground="#566573" Margin="0,0,0,2"/>
-                        <TextBlock x:Name="TxtDokterConv"   FontSize="12" Foreground="#566573"/>
+                        <TextBlock x:Name="TxtDokterEmail"  FontSize="12" Foreground="#3D4D5C" Margin="0,0,0,2"/>
+                        <TextBlock x:Name="TxtDokterGsm"    FontSize="12" Foreground="#3D4D5C" Margin="0,0,0,2"/>
+                        <TextBlock x:Name="TxtDokterRiziv"  FontSize="12" Foreground="#3D4D5C" Margin="0,0,0,2"/>
+                        <TextBlock x:Name="TxtDokterConv"   FontSize="12" Foreground="#3D4D5C"/>
                     </StackPanel>
                 </Border>
 
