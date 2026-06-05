@@ -1,1 +1,4 @@
-<Solution />
+<Solution>
+  <Project Path="CLHelpdesk/CLHelpdesk.csproj" />
+  <Project Path="WpfHelpdesk/WpfHelpdesk.csproj" />
+</Solution>

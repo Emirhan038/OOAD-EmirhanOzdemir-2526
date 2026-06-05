@@ -1,0 +1,185 @@
+<Window x:Class="WpfHelpdesk.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Helpdesk Tickets" Height="680" Width="900"
+        MinHeight="600" MinWidth="800">
+
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <!-- Bovenste helft: filters + lijst (links) en details + afsluiten (rechts) -->
+            <RowDefinition Height="*"/>
+            <!-- Scheidingsregel -->
+            <RowDefinition Height="5"/>
+            <!-- Onderste deel: nieuw-ticket formulier -->
+            <RowDefinition Height="Auto"/>
+            <!-- Foutmeldingregel -->
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- ═══════════════════════════════════════════════════════════
+             BOVENSTE GEBIED: twee kolommen (links = lijst, rechts = detail)
+             ═══════════════════════════════════════════════════════════ -->
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="8"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- ── LINKS: Filters + ListBox ── -->
+            <DockPanel Grid.Column="0">
+
+                <!-- Filterblok bovenaan de linkerkolom -->
+                <StackPanel DockPanel.Dock="Top" Margin="0,0,0,6">
+
+                    <!-- Label + Prioriteit-filter -->
+                    <TextBlock Text="Prioriteit" FontWeight="Bold" Margin="0,0,0,2"/>
+                    <ComboBox x:Name="cmbPrioriteitFilter"
+                              Margin="0,0,0,6"
+                              SelectionChanged="FilterGewijzigd"/>
+
+                    <!-- Label + Melder-filter -->
+                    <TextBlock Text="Melder" FontWeight="Bold" Margin="0,0,0,2"/>
+                    <ComboBox x:Name="cmbMelderFilter"
+                              Margin="0,0,0,6"
+                              SelectionChanged="FilterGewijzigd"/>
+
+                    <!-- Alleen open tickets -->
+                    <CheckBox x:Name="chkAlleenOpen"
+                              Content="Alleen open tickets"
+                              Checked="FilterGewijzigd"
+                              Unchecked="FilterGewijzigd"/>
+                </StackPanel>
+
+                <!-- ListBox vult de rest van de linkerkolom op -->
+                <ListBox x:Name="lstTickets"
+                         SelectionChanged="LstTickets_SelectionChanged"/>
+            </DockPanel>
+
+            <!-- Verticale splitter -->
+            <GridSplitter Grid.Column="1"
+                          Width="5"
+                          HorizontalAlignment="Center"
+                          VerticalAlignment="Stretch"/>
+
+            <!-- ── RECHTS: Detailweergave + Afsluiten-knop ── -->
+            <DockPanel Grid.Column="2">
+
+                <!-- Afsluiten-knop vastzetten onderaan de rechterkolom -->
+                <Button x:Name="btnAfsluiten"
+                        DockPanel.Dock="Bottom"
+                        Content="Ticket afsluiten"
+                        Height="30"
+                        Margin="0,6,0,0"
+                        Click="BtnAfsluiten_Click"/>
+
+                <!-- Detail-TextBlock vult de rest van de rechterkolom -->
+                <ScrollViewer VerticalScrollBarVisibility="Auto"
+                              HorizontalScrollBarVisibility="Auto">
+                    <TextBlock x:Name="txtDetails"
+                               FontFamily="Consolas"
+                               FontSize="13"
+                               TextWrapping="Wrap"/>
+                </ScrollViewer>
+            </DockPanel>
+        </Grid>
+
+        <!-- Horizontale splitter tussen boven en onder -->
+        <GridSplitter Grid.Row="1"
+                      Height="5"
+                      HorizontalAlignment="Stretch"
+                      VerticalAlignment="Center"/>
+
+        <!-- ═══════════════════════════════════════════════════════════
+             ONDERSTE GEBIED: Nieuw-ticket formulier
+             ═══════════════════════════════════════════════════════════ -->
+        <GroupBox Grid.Row="2" Header="Nieuw ticket" Padding="6" Margin="0,4,0,4">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <!-- Rij 0: Titel -->
+                <TextBlock Grid.Row="0" Grid.Column="0"
+                           Text="Titel:"
+                           VerticalAlignment="Center"
+                           Margin="0,4,8,4"/>
+                <TextBox x:Name="txtTitel"
+                         Grid.Row="0" Grid.Column="1"
+                         Grid.ColumnSpan="3"
+                         Margin="0,4,0,4"
+                         Height="26"/>
+
+                <!-- Rij 1: Melder (links) en Prioriteit (rechts) -->
+                <TextBlock Grid.Row="1" Grid.Column="0"
+                           Text="Melder:"
+                           VerticalAlignment="Center"
+                           Margin="0,4,8,4"/>
+                <ComboBox x:Name="cmbMelderNieuw"
+                          Grid.Row="1" Grid.Column="1"
+                          Margin="0,4,12,4"
+                          Height="26"/>
+
+                <TextBlock Grid.Row="1" Grid.Column="2"
+                           Text="Prioriteit:"
+                           VerticalAlignment="Center"
+                           Margin="0,4,8,4"/>
+                <ComboBox x:Name="cmbPrioriteitNieuw"
+                          Grid.Row="1" Grid.Column="3"
+                          Margin="0,4,0,4"
+                          Height="26"/>
+
+                <!-- Rij 2: Type (links) en ExtraInfo met dynamisch label (rechts) -->
+                <TextBlock Grid.Row="2" Grid.Column="0"
+                           Text="Type:"
+                           VerticalAlignment="Center"
+                           Margin="0,4,8,4"/>
+                <ComboBox x:Name="cmbType"
+                          Grid.Row="2" Grid.Column="1"
+                          Margin="0,4,12,4"
+                          Height="26"
+                          SelectionChanged="CmbType_SelectionChanged">
+                    <ComboBoxItem Content="Hardware"/>
+                    <ComboBoxItem Content="Software"/>
+                </ComboBox>
+
+                <!-- Dynamisch label: "Toestel" of "Applicatie" -->
+                <TextBlock x:Name="lblExtraInfo"
+                           Grid.Row="2" Grid.Column="2"
+                           Text="Toestel:"
+                           VerticalAlignment="Center"
+                           Margin="0,4,8,4"/>
+                <TextBox x:Name="txtExtraInfo"
+                         Grid.Row="2" Grid.Column="3"
+                         Margin="0,4,0,4"
+                         Height="26"/>
+
+                <!-- Rij 3: Toevoegen-knop -->
+                <Button x:Name="btnToevoegen"
+                        Grid.Row="3" Grid.Column="3"
+                        Content="Toevoegen"
+                        Height="28"
+                        Margin="0,6,0,0"
+                        HorizontalAlignment="Right"
+                        Click="BtnToevoegen_Click"/>
+            </Grid>
+        </GroupBox>
+
+        <!-- Foutmeldingsbalk onderaan het venster -->
+        <TextBlock x:Name="txtFout"
+                   Grid.Row="3"
+                   Foreground="Red"
+                   FontWeight="SemiBold"
+                   TextWrapping="Wrap"
+                   Margin="0,2,0,0"/>
+    </Grid>
+</Window>
